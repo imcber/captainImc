@@ -3,16 +3,39 @@
     width: 100%;
 }
 
-.intro-container{
-    height: 100vh;
-    width: 50%;
+.intro-view{
+    height: 80%;
+    width: 100%;
 }
 
 .menu-item{
-    font-size: 5vw;
-    color: #313131;
+    font-size: 5rem;
+    color: #393939;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .menu-item:hover{
-    color: #000;    
+    color: #fff;    
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    top: 4%;
+}
+
+.menu-container > div{
+    padding-left: 35%;
+    height: 21%;
+}
+
+.complement-intro{
+    height: 20vh;
+    width: 100%;
+}
+
+.back-black{
+    background: #000000;
 }
