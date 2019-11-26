@@ -13,10 +13,13 @@
     color: #393939;
     font-family: 'Nunito Sans', sans-serif;
     cursor: pointer;
+    transition: all 0.7s linear;
+    position: absolute;
 }
 
 .menu-item:hover{
-    color: #fff;    
+    color: #fff;
+    padding-left: .7em;
 }
 
 .menu-container{
@@ -29,7 +32,12 @@
 
 .menu-container > div{
     padding-left: 35%;
-    height: 21%;
+    height: 19%;
+    padding-top: 2%;
+}
+
+.menu-container > div:first-child{
+    padding-top: 0 !important;
 }
 
 .complement-intro{
