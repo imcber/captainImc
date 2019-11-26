@@ -5,13 +5,16 @@ import './introView.css';
 function IntroView(props){
     return(
         <section className={'section-container back-black'}>
+            <ComplementView></ComplementView>
             <div className='intro-view'>
                 <MenuList />
             </div>
+            <ComplementView></ComplementView>
         </section>
     );
 }
 
+//Contain the items of the menu
 function MenuList(props){
     const listItemMenu = [
         {title:'About',section:'about',preText:'I'},
@@ -23,6 +26,15 @@ function MenuList(props){
     return(
         <div className={'menu-container'}>
             {listItemMenu.map((item) => <MenuItem key={item.section} item={item}/>)}
+        </div>
+    );
+}
+
+//The complement about info
+function ComplementView(props){
+    return(
+        <div className={'complement-intro'}>
+            {props.children}
         </div>
     );
 }
