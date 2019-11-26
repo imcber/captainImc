@@ -6,6 +6,7 @@
 .intro-view{
     height: 80%;
     width: 100%;
+    display: flex;
 }
 
 .menu-item{
@@ -47,4 +48,9 @@
 
 .back-black{
     background: #000000;
+}
+
+.main-img-container{
+    height: 100%;
+    width: 30%;
 }

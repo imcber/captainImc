@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from 'react';
 import './introView.css';
 
+//const mainImg = require('../../../assets/img/NWA869G.png');
+
 //this the intro view, contains the principal menu and paralllax img.
 function IntroView(props){
     return(
@@ -24,9 +26,14 @@ function MenuList(props){
     ];
 
     return(
-        <div className={'menu-container'}>
-            {listItemMenu.map((item) => <MenuItem key={item.section} item={item}/>)}
-        </div>
+        <>
+            <div className={'menu-container'}>
+                {listItemMenu.map((item) => <MenuItem key={item.section} item={item}/>)}
+            </div>
+            <div className='main-img-container'>
+                <img src={''}/>
+            </div>
+        </>
     );
 }
 
