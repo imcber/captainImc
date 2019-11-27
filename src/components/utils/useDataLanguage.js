@@ -21,6 +21,3 @@ export function useDataLanguage(idLenguange){
         dataText
     };
 }
-
-
-//export const LanguageContext = React.createContext(textLanguage.esp);

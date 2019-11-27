@@ -1,0 +1,8 @@
+{
+    "en":{
+        "menu":{"about":"About","tech":"Tech","work":"Work","contact":"Contact"}
+    },
+    "es":{
+        "menu":{"about":"Acerca","tech":"Tecnologia","work":"Trabajo","contact":"Contacto"}
+    }
+}
