@@ -1,4 +1,4 @@
-import React,{useEffect,useState,useContext} from 'react';
+import React,{useEffect,useState} from 'react';
 import './introView.css';
 //import {useDataLanguage} from '../../utils/useDataLanguage';
 import {StateProvider,useStateValue} from '../../utils/state';
@@ -60,20 +60,21 @@ function HeaderIntro(props){
             });
         };
         return(
-            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'green'}:{}}>
+            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#ffffff'}:{}}>
                 {props.nameLang.toUpperCase()}  
             </span>
         );
     };
-
     return(
         <>
             <div className={'header-intro'}>
-                <span>Captain Imc</span>
-                <span>FULL STACK DEVELOPER & UX DESIGN</span>
+                <span>{dataText.lg.header.title}</span>
+                <span>{dataText.lg.header.degree}</span>
             </div>
             <div className={'header-intro-lg'}>
-                {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
+                <div className={'container-intro-lg'}>
+                    {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
+                </div>
             </div>
         </>
     );
@@ -81,7 +82,7 @@ function HeaderIntro(props){
 
 //Contain the items of the menu
 function MenuList(props){
-   const [dataText,handlerlanguage] = useStateValue();
+   const [dataText] = useStateValue();
    let listMenuStr = ['about','tech','work','contact'];
    const listItemMenu = listMenuStr.map(item => {
         return {title:dataText.lg.menu[item],section:item};
