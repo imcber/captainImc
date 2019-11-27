@@ -5,16 +5,18 @@ import {StateProvider,useStateValue} from '../../utils/state';
 import dl from '../../../assets/dataContent/dataLanguages.json'
 
 //const mainImg = require('../../../assets/img/NWA869G.png');
-
 const initialState = {
-    lg : dl['es']/*LENGUAGE*/
+    lg : dl['es'],/*LENGUAGE*/
+    lgKeys : Object.keys(dl),
+    lgActual : 'es'
 }
 const reducer = (state,action) => {
     switch (action.type){
         case 'changeLanguage':
             return{
                 ...state,
-                lg: action.newLanguage
+                lg: dl[action.newLanguage],
+                lgActual: action.newLanguage
             };
         default:
             return state;
@@ -45,7 +47,25 @@ function IntroViewReturn(props){
 }
 
 function HeaderIntro(props){
-    //const {dataText} = useDataLanguage('esp');
+    //object context
+    const [dataText,handlerLanguange] = useStateValue();
+    //item to switch language
+    const LanguageItem = (props) =>{
+        const indLang = dataText.lgActual !== props.nameLang;
+        //funtion click switch languange
+        const switchLanguage = () =>{
+            handlerLanguange({
+                    type : 'changeLanguage',
+                    newLanguage : props.nameLang
+            });
+        };
+        return(
+            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'green'}:{}}>
+                {props.nameLang.toUpperCase()}  
+            </span>
+        );
+    };
+
     return(
         <>
             <div className={'header-intro'}>
@@ -53,7 +73,7 @@ function HeaderIntro(props){
                 <span>FULL STACK DEVELOPER & UX DESIGN</span>
             </div>
             <div className={'header-intro-lg'}>
-                
+                {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
             </div>
         </>
     );
@@ -61,18 +81,19 @@ function HeaderIntro(props){
 
 //Contain the items of the menu
 function MenuList(props){
-   // const {dataText} = useDataLanguage('esp');
    const [dataText,handlerLanguange] = useStateValue();
    let listMenuStr = ['about','tech','work','contact'];
    const listItemMenu = listMenuStr.map(item => {
         return {title:dataText.lg.menu[item],section:item};
    });
-    /*const listItemMenu = [
-        {title:dataText.lg.menu.about,section:'about',preText:'I'},
-        {title:dataText.menu.tech,section:'tech',preText:'II'},
-        {title:dataText.menu.work,section:'work',preText:'III'},
-        {title:dataText.menu.contact,section:'contact',preText:'IV'}
-    ];*/
+
+   const MenuItem = props =>{
+        return(
+            <div>
+                <a className={'menu-item'}>{props.item.title}</a>
+            </div>
+        );
+    }
 
     return(
         <>
@@ -95,13 +116,5 @@ function ComplementView(props){
     );
 }
 
-//each item of menu
-function MenuItem(props){
-    return(
-        <div>
-            <a className={'menu-item'}>{props.item.title}</a>
-        </div>
-    );
-}
 
 export default IntroView;
