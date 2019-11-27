@@ -48,13 +48,13 @@ function IntroViewReturn(props){
 
 function HeaderIntro(props){
     //object context
-    const [dataText,handlerLanguange] = useStateValue();
+    const [dataText,handlerlanguage] = useStateValue();
     //item to switch language
     const LanguageItem = (props) =>{
         const indLang = dataText.lgActual !== props.nameLang;
-        //funtion click switch languange
+        //funtion click switch language
         const switchLanguage = () =>{
-            handlerLanguange({
+            handlerlanguage({
                     type : 'changeLanguage',
                     newLanguage : props.nameLang
             });
@@ -81,7 +81,7 @@ function HeaderIntro(props){
 
 //Contain the items of the menu
 function MenuList(props){
-   const [dataText,handlerLanguange] = useStateValue();
+   const [dataText,handlerlanguage] = useStateValue();
    let listMenuStr = ['about','tech','work','contact'];
    const listItemMenu = listMenuStr.map(item => {
         return {title:dataText.lg.menu[item],section:item};
