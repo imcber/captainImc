@@ -1,11 +1,11 @@
 {
     
     "es":{
-        "header":{"title":"Capitan Imc","degree":"FULL STACK DEVELOPER & UX DESIGN"},
-        "menu":{"about":"Acerca","tech":"Tecnologia","work":"Trabajo","contact":"Contacto"}
+        "header":{"title":"Capitan Imc","degree":"FULL STACK DEVELOPER"},
+        "menu":{"about":"Acerca","tech":"Tech","work":"Trabajo","contact":"Contacto"}
     },
     "en":{
-        "header":{"title":"Captain Imc","degree":"FULL STACK DEVELOPER & UX DESIGN"},
+        "header":{"title":"Captain Imc","degree":"FULL STACK DEVELOPER"},
         "menu":{"about":"About","tech":"Tech","work":"Work","contact":"Contact"}
     }
 }

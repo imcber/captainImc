@@ -34,15 +34,35 @@ const IntroView = () => {
 //this the intro view, contains the principal menu and paralllax img.
 function IntroViewReturn(props){
     return(
-        <section className={'section-container back-black'}>
+        <section className={'section-container back-color'}>
             <ComplementView>
                 <HeaderIntro />   
             </ComplementView>
             <div className='intro-view'>
                 <MenuList />
             </div>
-            <ComplementView></ComplementView>
+            <ComplementView>
+                <FooterIntro />
+            </ComplementView>
         </section>
+    );
+}
+
+const FooterIntro = () =>{
+    const FooterIntro = (props) => {
+        return(
+            <div className={'footer-intro'}>
+                <div className={'footer-container'} style={props.style}>
+                    <span className='title-intro'>{props.text}</span>
+                </div>
+            </div>
+        );
+    }
+    return(
+        <>
+            <FooterIntro style={{}} text={'CAPTAINIMC.COM'}/>
+            <FooterIntro style={{left: '85%'}} text={'2020'}/>
+        </>
     );
 }
 
@@ -60,22 +80,30 @@ function HeaderIntro(props){
             });
         };
         return(
-            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#ffffff'}:{}}>
+            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#7cb56c'}:{}}>
                 {props.nameLang.toUpperCase()}  
             </span>
         );
     };
+
+    const HeaderIntro = (props) => {
+        return(
+            <div className={props.class1}>
+                <div className={props.class2}>
+                    {props.children}
+                </div>
+            </div>  
+        );
+    }
+
     return(
         <>
-            <div className={'header-intro'}>
-                <div className={'degree-container'}>
-                    <span className={'degree-intro'}>{dataText.lg.header.degree}</span></div>
-                </div>
-            <div className={'header-intro-lg'}>
-                <div className={'container-intro-lg'}>
-                    {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
-                </div>
-            </div>
+            <HeaderIntro class1={'header-intro'} class2={'title-container'}>
+                <span className='title-intro'>{dataText.lg.header.degree}</span>
+            </HeaderIntro>
+            <HeaderIntro class1={'header-intro-lg'} class2={'container-intro-lg'}>
+                {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
+            </HeaderIntro>
         </>
     );
 }

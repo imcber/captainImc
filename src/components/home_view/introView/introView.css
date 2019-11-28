@@ -4,15 +4,15 @@
 }
 
 .intro-view{
-    height: 80%;
+    height: 70%;
     width: 100%;
     display: flex;
 }
 
 .menu-item{
-    font-size: 7rem;
+    font-size: 6rem;
     color: #393939;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: all 0.7s linear;
     position: absolute;
@@ -41,7 +41,7 @@
     padding-top: 0 !important;
 }
 
-.back-black{
+.back-color{
     background: #000000;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .complement-intro{
-    height: 10%;
+    height: 15%;
     width: 100%;
     display: flex;
     color: #fff;
@@ -65,26 +65,41 @@
 .header-intro-lg{
     width: 50%;
     height: 100%;
-    text-align: right;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
-    font-size: 2vw;
+    font-size: 1.3vw;
     color: #393939;
 }
 .container-intro-lg{
-    padding-top: calc(100vh*.02);
+    padding-top: calc(100vh*.03);
 }
 .container-intro-lg > span{
     padding-right: 2vw;
-    padding-top: 3vh;
     cursor: pointer;
 }
 
-.degree-intro{
+.title-intro{
     font-family: 'Raleway', sans-serif;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
-.degree-container{
+.title-container{
+    padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 3vh;
+}
+
+.footer-container{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 0 !important;
+    position: absolute;
+    top: 50%;
+}
+
+.footer-intro{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    color: #5b5b5b;
 }
