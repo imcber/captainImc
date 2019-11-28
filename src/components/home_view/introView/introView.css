@@ -78,3 +78,13 @@
     padding-top: 3vh;
     cursor: pointer;
 }
+
+.degree-intro{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+}
+
+.degree-container{
+    padding-right: 2vw;
+    padding-top: 3vh;
+}

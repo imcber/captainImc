@@ -68,9 +68,9 @@ function HeaderIntro(props){
     return(
         <>
             <div className={'header-intro'}>
-                <span>{dataText.lg.header.title}</span>
-                <span>{dataText.lg.header.degree}</span>
-            </div>
+                <div className={'degree-container'}>
+                    <span className={'degree-intro'}>{dataText.lg.header.degree}</span></div>
+                </div>
             <div className={'header-intro-lg'}>
                 <div className={'container-intro-lg'}>
                     {dataText.lgKeys.map((item) => <LanguageItem key={item} nameLang={item}/>)}
