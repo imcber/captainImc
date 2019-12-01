@@ -1,0 +1,15 @@
+.title-container-body>span{
+    font-size: 2rem;
+    color:#17252A;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title-about-container{
+    height: 100%;
+}
+
+.title-about-container>span{
+    font-size: 3rem;
+    color:#17252A;
+    font-family: 'Poppins', sans-serif;
+}

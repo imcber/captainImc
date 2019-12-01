@@ -2,3 +2,12 @@
     height: 100vh;
     width: 100%;
 }
+.title-container-body{
+    padding-left: 4vw;
+    padding-top: 3vh;
+    height: 7%;
+}
+
+.rest-container-body{
+    height: 90%;
+}

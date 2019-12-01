@@ -2,10 +2,32 @@
     
     "es":{
         "header":{"title":"Capitan Imc","degree":"FULL STACK DEVELOPER"},
-        "menu":{"about":"Acerca","tech":"Tech","work":"Trabajo","contact":"Contacto"}
+        "menu":{
+            "about":{
+                "title":"Acerca",
+                "titleView":"Soy Ekatl, Fullstack developer de Mexico, ahuevo!"
+            },"tech":{
+                "title":"Tech"
+            },"work":{
+                "title":"Trabajo"
+            },"contact":{
+                "title":"Contacto"
+            }
+        }
     },
     "en":{
         "header":{"title":"Captain Imc","degree":"FULL STACK DEVELOPER"},
-        "menu":{"about":"About","tech":"Tech","work":"Work","contact":"Contact"}
+        "menu":{
+            "about":{
+                "title":"About",
+                "titleView":"I am Ekatl, Fullstack developer from Mexico"
+            },"tech":{
+                "title":"Tech"
+            },"work":{
+                "title":"Work"
+            },"contact":{
+                "title":"Contact"
+            }
+        }
     }
 }
