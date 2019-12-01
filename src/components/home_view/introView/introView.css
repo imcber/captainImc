@@ -1,7 +1,3 @@
-.section-container{
-    height: 100vh;
-    width: 100%;
-}
 
 .intro-view{
     height: 70%;
@@ -11,7 +7,7 @@
 
 .menu-item{
     font-size: 6rem;
-    color: #393939;
+    color: #17252A;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: all 0.7s linear;
@@ -19,7 +15,7 @@
 }
 
 .menu-item:hover{
-    color: #fff;
+    color: #DEF2F1;
     padding-left: .7em;
 }
 
@@ -42,7 +38,7 @@
 }
 
 .back-color{
-    background: #000000;
+    background: #3AAFA9;
 }
 
 .main-img-container{
@@ -58,7 +54,7 @@
     height: 15%;
     width: 100%;
     display: flex;
-    color: #fff;
+    color: #17252A;
 }
 
 .header-intro{
@@ -72,7 +68,7 @@
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-size: 1.3vw;
-    color: #393939;
+    color: #17252A;
 }
 .container-intro-lg{
     padding-top: calc(100vh*.03);
@@ -105,5 +101,5 @@
     width: 50%;
     height: 100%;
     position: relative;
-    color: #5b5b5b;
+    color: #17252A;
 }
