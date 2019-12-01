@@ -1,30 +1,11 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import './introView.css';
 //import {useDataLanguage} from '../../utils/useDataLanguage';
-import {StateProvider,useStateValue} from '../../utils/state';
-import dl from '../../../assets/dataContent/dataLanguages.json'
+import {useStateValue} from '../../utils/state';
+
 
 //IMG INSIDE INTRO VIEW
 const mainImg = require('../../../assets/img/mushroom.png');
-const initialState = {
-    lg : dl['es'],/*LENGUAGE*/
-    lgKeys : Object.keys(dl),
-    lgActual : 'es'
-}
-
-//THIS SAVE THE STATE
-const reducer = (state,action) => {
-    switch (action.type){
-        case 'changeLanguage':
-            return{
-                ...state,
-                lg: dl[action.newLanguage],
-                lgActual: action.newLanguage
-            };
-        default:
-            return state;
-    }
-};
 
 const IntroView = () => {
     //this the intro view, contains the principal menu and paralllax img.
@@ -54,9 +35,7 @@ const IntroView = () => {
     }
 
     return(
-        <StateProvider initialState={initialState} reducer={reducer}>
-            <IntroViewReturn />
-        </StateProvider>
+        <IntroViewReturn />
     );
 };
 

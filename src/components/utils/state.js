@@ -9,3 +9,18 @@ export const StateProvider = ({reducer,initialState, children}) => (
 );
 
 export const useStateValue = () => useContext(StateContext);
+
+export const useStateData = () => {
+    let objState = useContext(StateContext)[0];
+    const func = (loc) =>{
+        let response = objState;
+        let locArray = loc.split('.');
+        locArray.forEach(item => {
+            if(item){
+                response = response[item];
+            }
+        });
+        return response !== null?response:'';
+    };
+    return func;
+};
