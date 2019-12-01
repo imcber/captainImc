@@ -5,7 +5,7 @@ import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
 
-const initialState = {
+const initialState = { 
     lg : dl['es'],/*LENGUAGE*/
     lgKeys : Object.keys(dl),
     lgActual : 'es'

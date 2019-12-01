@@ -58,7 +58,7 @@ const FooterIntro = () =>{
     );
 }
 
-function HeaderIntro(props){
+function HeaderIntro(props){ 
     //object context
     const [dataText,handlerlanguage] = useStateValue();
     //item to switch language

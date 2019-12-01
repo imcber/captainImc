@@ -23,4 +23,4 @@ export const useStateData = () => {
         return response !== null?response:'';
     };
     return func;
-};
+}; 
