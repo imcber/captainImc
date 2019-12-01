@@ -4,7 +4,7 @@ import './introView.css';
 import {StateProvider,useStateValue} from '../../utils/state';
 import dl from '../../../assets/dataContent/dataLanguages.json'
 
-//const mainImg = require('../../../assets/img/NWA869G.png');
+const mainImg = require('../../../assets/img/mushroom.png');
 const initialState = {
     lg : dl['es'],/*LENGUAGE*/
     lgKeys : Object.keys(dl),
@@ -80,7 +80,7 @@ function HeaderIntro(props){
             });
         };
         return(
-            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#7cb56c'}:{}}>
+            <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#4d3761'}:{}}>
                 {props.nameLang.toUpperCase()}  
             </span>
         );
@@ -130,7 +130,7 @@ function MenuList(props){
                 {listItemMenu.map((item) => <MenuItem key={item.section} item={item}/>)}
             </div>
             <div className='main-img-container'>
-                <img src={''}/>
+                <img src={mainImg}/>
             </div>
         </>
     );

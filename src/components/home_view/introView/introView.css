@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 70%;
+    width: 60%;
     top: 4%;
 }
 
@@ -47,7 +47,11 @@
 
 .main-img-container{
     height: 100%;
-    width: 30%;
+    width: 40%;
+}
+
+.main-img-container>img{
+    height: 100%;
 }
 
 .complement-intro{
