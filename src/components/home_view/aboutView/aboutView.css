@@ -16,7 +16,25 @@
 .title-about-container>span{
     font-size: 1.5rem;
     color:#17252A;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Raleway', sans-serif; 
+    padding: 30% 10% 0 10%;
+    width: 80%;
+    font-weight: 600;
+}
+
+.title-summary-container{
+    height: 100%;
+    width: 70%;
+    text-align: justify;
+    text-justify: inter-word;
+    flex-direction: column;
+    display: flex;
+}
+
+.title-summary-container>span{
+    font-size: 1.3rem;
+    color:#23383f;
+    font-family: 'Raleway', sans-serif; 
     padding: 30% 10% 0 10%;
     width: 80%;
 }

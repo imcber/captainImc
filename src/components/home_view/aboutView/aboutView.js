@@ -25,6 +25,9 @@ const AboutContent = () =>{
             <div className={'title-about-container'}>
                 <span>{getDataLeg('lg.menu.about.titleView')}</span>
             </div>
+            <div className={'title-summary-container'}>
+                <span>{getDataLeg('lg.menu.about.summary')}</span>
+            </div>
         </>
     );
 }
