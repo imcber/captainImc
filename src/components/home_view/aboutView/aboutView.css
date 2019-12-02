@@ -24,7 +24,7 @@
 
 .title-summary-container{
     height: 100%;
-    width: 70%;
+    width: 35%;
     text-align: justify;
     text-justify: inter-word;
     flex-direction: column;
@@ -35,6 +35,5 @@
     font-size: 1.3rem;
     color:#23383f;
     font-family: 'Raleway', sans-serif; 
-    padding: 30% 10% 0 10%;
-    width: 80%;
+    padding: 9% 10% 0 10%;
 }

@@ -20,14 +20,27 @@ const AboutView = () =>{
 
 const AboutContent = () =>{
     const getDataLeg = useStateData();
+    const summaryFirst = getDataLeg('lg.menu.about.summary-me')+ <br/> +getDataLeg('lg.menu.about.summary-work');
+
+    const TitleSummaryContainer = (props) => {
+        return(
+            <div className={'title-summary-container'}>
+                {props.children}
+            </div>
+        );
+    };
+
     return(
         <>
             <div className={'title-about-container'}>
                 <span>{getDataLeg('lg.menu.about.titleView')}</span>
             </div>
-            <div className={'title-summary-container'}>
-                <span>{getDataLeg('lg.menu.about.summary')}</span>
-            </div>
+            <TitleSummaryContainer >
+                <span>{getDataLeg('lg.menu.about.summary-me')}<br/><br/>{getDataLeg('lg.menu.about.summary-work')}</span>
+            </TitleSummaryContainer>
+            <TitleSummaryContainer >
+                <span>{getDataLeg('lg.menu.about.summary-second')}<br/><br/>{getDataLeg('lg.menu.about.summary-myjob')}</span>
+            </TitleSummaryContainer>
         </>
     );
 }
