@@ -8,7 +8,7 @@ const AboutView = () =>{
     //GET DATA TO THE TEXT
     const getDataLeg = useStateData();
     return(
-        <SectionContainer title={getDataLeg('lg.menu.about.title')}>
+        <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')}>
             <AboutContent />
         </SectionContainer>
     );
@@ -34,10 +34,10 @@ const AboutContent = () =>{
                 <span>{getDataLeg('lg.menu.about.titleView')}</span>
             </div>
             <TitleSummaryContainer >
-                <span>{getDataLeg('lg.menu.about.summary-me')}<br/><br/>{getDataLeg('lg.menu.about.summary-work')}</span>
-            </TitleSummaryContainer>
-            <TitleSummaryContainer >
-                <span>{getDataLeg('lg.menu.about.summary-second')}<br/><br/>{getDataLeg('lg.menu.about.summary-myjob')}</span>
+                <p>{getDataLeg('lg.menu.about.summary-me')}</p>
+                <p>{getDataLeg('lg.menu.about.summary-work')}</p>
+                <p>{getDataLeg('lg.menu.about.summary-second')}</p>
+                <p>{getDataLeg('lg.menu.about.summary-myjob')}</p>
             </TitleSummaryContainer>
         </>
     );

@@ -6,7 +6,7 @@ import {useStateData} from '../../utils/state';
 const TechView = () =>{
     const getDataLeg = useStateData();
     return(
-        <SectionContainer title={getDataLeg('lg.menu.tech.title')}>
+        <SectionContainer id={'techView'} title={getDataLeg('lg.menu.tech.title')}>
             <h1>TECH VIEW</h1>
         </SectionContainer>
     );

@@ -111,7 +111,7 @@ function MenuList(props){
    const MenuItem = props =>{
         return(
             <div>
-                <a className={'menu-item'}>{props.item.title}</a>
+                <a href={'#'+props.item.section + 'View'} className={'menu-item'}>{props.item.title}</a>
             </div>
         );
     }

@@ -6,8 +6,8 @@
 
 .title-about-container{
     height: 100%;
-    width: 30%;
-    text-align: justify;
+    width: 40%;
+    text-align: right;
     text-justify: inter-word;
     display: flex;
     flex-direction: column;
@@ -17,23 +17,29 @@
     font-size: 1.5rem;
     color:#17252A;
     font-family: 'Raleway', sans-serif; 
-    padding: 30% 10% 0 10%;
-    width: 80%;
+    padding: 8% 0% 0 10%;
+    width: 90%;
     font-weight: 600;
 }
 
 .title-summary-container{
     height: 100%;
-    width: 35%;
-    text-align: justify;
-    text-justify: inter-word;
-    flex-direction: column;
-    display: flex;
+    width: 60%;
+    text-align: left;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3vw;
+    -moz-column-gap: 20px;
+    column-gap: 2vw;
+    padding: 3% 7% 0 5%;
 }
 
-.title-summary-container>span{
-    font-size: 1.3rem;
+.title-summary-container>p{
+    font-size: 1em;
     color:#23383f;
     font-family: 'Raleway', sans-serif; 
-    padding: 9% 10% 0 10%;
+    line-height: 4vh;
+    letter-spacing: .05em;
+    margin: 0;
 }

@@ -12,6 +12,7 @@
     cursor: pointer;
     transition: all 0.7s linear;
     position: absolute;
+    text-decoration: none;
 }
 
 .menu-item:hover{
