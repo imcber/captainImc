@@ -7,6 +7,7 @@ import {useStateValue,useStateData} from '../../utils/state';
 //IMG INSIDE INTRO VIEW
 const mainImg = require('../../../assets/img/mushroom.png');
 
+//INIT VIEW ABOUT
 const IntroView = () => {
     //this the intro view, contains the principal menu and paralllax img.
     const IntroViewReturn=(props) => {
