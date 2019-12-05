@@ -8,7 +8,7 @@ const AboutView = () =>{
     //GET DATA TO THE TEXT
     const getDataLeg = useStateData();
     return(
-        <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')}>
+        <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')} style={{display:'flex'}}>
             <AboutContent />
         </SectionContainer>
     );

@@ -42,7 +42,7 @@ export const SectionContainer = props =>{
             <div className={'title-container-body'}>
                 <span>{props.title}</span>
             </div>
-            <div className={'rest-container-body'} style={{display:'flex'}}>
+            <div className={'rest-container-body'} style={props.style}>
                 {props.children}
             </div>
         </section>

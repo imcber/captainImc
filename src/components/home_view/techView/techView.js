@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './techView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
+import {CircleChart} from './charts/charts';
 import {FaHome,FaFacebookF,FaTwitter,FaInstagram} from 'react-icons/fa';
 
 const javaScriptTech = require("../../../assets/img/tech/javascript.png");
@@ -19,7 +20,7 @@ const TechView = () =>{
     //GET DATA JSON
     const getDataLeg = useStateData();
     return(
-        <SectionContainer id={'techView'} title={getDataLeg('lg.menu.tech.title')}>
+        <SectionContainer id={'techView'} title={getDataLeg('lg.menu.tech.title')} style={{display:'flex'}}>
             <TechContent />
         </SectionContainer>
     );
@@ -42,7 +43,8 @@ const TechContent = () => {
     const Charts = () => {
         return(
             <ElementsContainer class={'tech-charts'}>
-
+                <div></div>
+                <CircleChart />
             </ElementsContainer>
         );
     };

@@ -21,15 +21,15 @@
 }
 
 .tech-container{
-    width: 40%;
+    width: 35em;
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
     justify-content: space-around;
     height: 75%;
     padding-top: 5%;
+    padding-left: 2em;
 }
 
 .tech-charts{
-    width: 60%;
+    width: auto;
 }
