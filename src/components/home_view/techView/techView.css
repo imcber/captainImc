@@ -31,5 +31,11 @@
 }
 
 .tech-charts{
-    width: auto;
+    text-align: right;
+    width: 45em;
+    background:#17252A;
+    height: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
 }

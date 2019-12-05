@@ -43,7 +43,8 @@ const TechContent = () => {
     const Charts = () => {
         return(
             <ElementsContainer class={'tech-charts'}>
-                <div></div>
+                <CircleChart />
+                <CircleChart />
                 <CircleChart />
             </ElementsContainer>
         );
