@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './techView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
@@ -29,7 +29,15 @@ const TechView = () =>{
 //FUNCTION PART
 const TechContent = () => {
 
-    const [valuesChart,setValuesChart] = useState({exp:'0',use:'0',skills:'0',speed:'0'})
+    //chart values
+    const [valuesChart,setValuesChart] = useState({exp:'0',use:'0'});
+    //Get data JSON
+    const getDataLeg = useStateData();
+
+    let chartsList = [
+        {name:getDataLeg('lg.menu.tech.charts.exp'),range:0,key:'exp',type:getDataLeg('lg.menu.tech.charts.years')},
+        {name:getDataLeg('lg.menu.tech.charts.use'),range:0,key:'use',type:'%'}
+    ];
 
     //FIRST HANDMADE CONTAINER
     const ElementsContainer = props =>{
@@ -40,12 +48,10 @@ const TechContent = () => {
         );
     }
     //CHARTS PART
-    const Charts = () => {
+    const Charts = (props) => {
         return(
             <ElementsContainer class={'tech-charts'}>
-                <CircleChart />
-                <CircleChart />
-                <CircleChart />
+                {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
             </ElementsContainer>
         );
     };
@@ -53,22 +59,25 @@ const TechContent = () => {
     const TechList = () =>{
         //LIST OF TECHS
         const list = [
-            {name:'JavaScript',icon:javaScriptTech,exp:'3',use:'8',skills:'6',speed:'6'},
-            {name:'ReactJS',icon:reactTech,exp:'1',use:'8',skills:'4',speed:'4'},
-            {name:'Angular',icon:angularTech,exp:'1',use:'5',skills:'4',speed:'4'},
-            {name:'HTML',icon:htmlTech,exp:'3',use:'8',skills:'6',speed:'5'},
-            {name:'CSS',icon:cssTech,exp:'3',use:'7',skills:'6',speed:'5'},
-            {name:'Python',icon:pythonTech,exp:'2',use:'4',skills:'4',speed:'4'},
-            {name:'Java',icon:javaTech,exp:'3',use:'6',skills:'5',speed:'5'},
-            {name:'C#',icon:csharpTech,exp:'2',use:'3',skills:'4',speed:'5'}
+            {name:'JavaScript',icon:javaScriptTech,exp:'30',use:'80'},
+            {name:'ReactJS',icon:reactTech,exp:'10',use:'80'},
+            {name:'Angular',icon:angularTech,exp:'10',use:'50'},
+            {name:'HTML',icon:htmlTech,exp:'30',use:'80'},
+            {name:'CSS',icon:cssTech,exp:'30',use:'70'},
+            {name:'Python',icon:pythonTech,exp:'20',use:'40'},
+            {name:'Java',icon:javaTech,exp:'30',use:'60'},
+            {name:'C#',icon:csharpTech,exp:'20',use:'30'}
         ];
 
         //EACH ITEM OF LIST
         const ItemList = props => {
             let thisItem = props.itemList;
+            const  handlerOnClick = (thisItem) =>{
+                //setValuesChart({exp:thisItem.exp,use:thisItem.use})
+            };
             return(
                 <div className={'tech-item'}>
-                    <img src={thisItem.icon}></img>
+                    <img src={thisItem.icon} onClick={handlerOnClick(thisItem)}></img>
                 </div>
             );
         }
@@ -83,7 +92,7 @@ const TechContent = () => {
     return(
         <>
             <TechList />
-            <Charts />
+            <Charts/>
         </>
     );
 }

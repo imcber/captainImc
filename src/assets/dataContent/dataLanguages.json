@@ -11,7 +11,12 @@
                 "summary-second":"Inicie mi carrera como desarrollador al salir de la universidad como ingeniero en software en Septiembre de 2017, enseguida tuve mi primer empleo en Open Road como desarrollador, despues me ofrecieron una mejor oportunidad de empleo en HRLSystems, en Julio de 2018 ofrecieron mi servicio al banco santander para un proyecto que estaba por terminar. En febrero de 2019, el cliente me pidio que siguiera desarrollando con ellos hasta el dia de hoy.",
                 "summary-myjob":"Tambien desarróllo productos independientes junto a un diseñador de la ciudad de México, esto me ayuda a practicar las tecnologias que no puedo usar en la oficina. Esto lo hago durante la noche."
             },"tech":{
-                "title":"Tech"
+                "title":"Tech",
+                "charts":{
+                    "exp":"Experiencia",
+                    "use":"Frecuencia",
+                    "years":"años"
+                }
             },"work":{
                 "title":"Trabajo"
             },"contact":{
@@ -30,7 +35,12 @@
                 "summary-second":"Start mi career as developer upon leave the university as a software engineer in September 2017, at once got my first job in Open Road as developer, then HRLSystems offered me a better job opportunity, in July 2018 my boss offer my work in the bank Santander for a project near to end. In february 2019, the client asked me to develop with them the products that i have today.",
                 "summary-myjob":"I also develop independent products with a designer from Mexico city, this help me to practice the tech that i cant use in the office. I´m work at the nigth, never tired of programming."
             },"tech":{
-                "title":"Tech"
+                "title":"Tech",
+                "charts":{
+                    "exp":"Experience",
+                    "use":"Frequency",
+                    "years":"years"
+                }
             },"work":{
                 "title":"Work"
             },"contact":{

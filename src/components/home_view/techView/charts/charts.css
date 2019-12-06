@@ -1,13 +1,13 @@
 .single-chart {
     width: 100%;
     text-align: center;
-    height: 30%;
-    padding-top: 2%;
+    height: 50%;
+    float: left;
   }
   
   .circular-chart {
     max-width: 80%;
-    max-height: 100%;
+    max-height: 80%;
   }
   
   .circle-bg {
