@@ -26,73 +26,80 @@ const TechView = () =>{
     );
 }
 
+    //FIRST HANDMADE CONTAINER
+const ElementsContainer = props =>{
+    return(
+        <div className={'elements-t-container ' + props.class}>
+            {props.children}
+        </div>
+        );
+    }
+
+//CHARTS PART
+const Charts = (props) => {
+    const getDataLeg = useStateData();
+
+    const chartsList = [
+        {name:getDataLeg('lg.menu.tech.charts.exp'),range:props.valuesChart.exp,key:'exp',text:getDataLeg('lg.menu.tech.charts.years'),type:'NAT'},
+        {name:getDataLeg('lg.menu.tech.charts.use'),range:props.valuesChart.use,key:'use',text:'%',type:'N'}
+    ];
+
+    return(
+        <ElementsContainer class={'tech-charts'}>
+            {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
+        </ElementsContainer>
+    );
+};
+
+//LIST TECHS PART
+const TechList = (props) =>{
+    //LIST OF TECHS
+    const list = [
+        {name:'JavaScript',icon:javaScriptTech,exp:'30',use:'80'},
+        {name:'ReactJS',icon:reactTech,exp:'10',use:'80'},
+        {name:'Angular',icon:angularTech,exp:'10',use:'50'},
+        {name:'HTML',icon:htmlTech,exp:'30',use:'80'},
+        {name:'CSS',icon:cssTech,exp:'30',use:'70'},
+        {name:'Python',icon:pythonTech,exp:'20',use:'40'},
+        {name:'Java',icon:javaTech,exp:'30',use:'60'},
+        {name:'C#',icon:csharpTech,exp:'20',use:'30'}
+    ];
+
+    const handlerOnClick = props.handlerOnClick;
+
+    //EACH ITEM OF LIST
+    const ItemList = props => {
+        let thisItem = props.itemList;
+        const thisHandlerClick = () =>{
+            handlerOnClick(thisItem);
+        }
+        return(
+            <div className={'tech-item'}>
+                <img src={thisItem.icon} onClick={thisHandlerClick}></img>
+            </div>
+        );
+    }
+
+    return(
+        <ElementsContainer class={'tech-container'}>
+            {list.map((item) => <ItemList key={item.name} itemList={item}/>)}
+        </ElementsContainer>
+    );
+};
+
 //FUNCTION PART
 const TechContent = () => {
 
     //chart values
-    const [valuesChart,setValuesChart] = useState({exp:'0',use:'0'});
-    //Get data JSON
-    const getDataLeg = useStateData();
-
-    let chartsList = [
-        {name:getDataLeg('lg.menu.tech.charts.exp'),range:0,key:'exp',type:getDataLeg('lg.menu.tech.charts.years')},
-        {name:getDataLeg('lg.menu.tech.charts.use'),range:0,key:'use',type:'%'}
-    ];
-
-    //FIRST HANDMADE CONTAINER
-    const ElementsContainer = props =>{
-        return(
-            <div className={'elements-t-container ' + props.class}>
-                {props.children}
-            </div>
-        );
-    }
-    //CHARTS PART
-    const Charts = (props) => {
-        return(
-            <ElementsContainer class={'tech-charts'}>
-                {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
-            </ElementsContainer>
-        );
-    };
-    //LIST TECHS PART
-    const TechList = () =>{
-        //LIST OF TECHS
-        const list = [
-            {name:'JavaScript',icon:javaScriptTech,exp:'30',use:'80'},
-            {name:'ReactJS',icon:reactTech,exp:'10',use:'80'},
-            {name:'Angular',icon:angularTech,exp:'10',use:'50'},
-            {name:'HTML',icon:htmlTech,exp:'30',use:'80'},
-            {name:'CSS',icon:cssTech,exp:'30',use:'70'},
-            {name:'Python',icon:pythonTech,exp:'20',use:'40'},
-            {name:'Java',icon:javaTech,exp:'30',use:'60'},
-            {name:'C#',icon:csharpTech,exp:'20',use:'30'}
-        ];
-
-        //EACH ITEM OF LIST
-        const ItemList = props => {
-            let thisItem = props.itemList;
-            const  handlerOnClick = (thisItem) =>{
-                //setValuesChart({exp:thisItem.exp,use:thisItem.use})
-            };
-            return(
-                <div className={'tech-item'}>
-                    <img src={thisItem.icon} onClick={handlerOnClick(thisItem)}></img>
-                </div>
-            );
-        }
-
-        return(
-            <ElementsContainer class={'tech-container'}>
-                {list.map((item) => <ItemList key={item.name} itemList={item}/>)}
-            </ElementsContainer>
-        );
+    const [valuesChart,setValuesChart] = useState({exp:'10',use:'0'});
+    const handlerOnClickChart = (thisItem) =>{
+        setValuesChart({exp:thisItem.exp,use:thisItem.use});
     };
 
     return(
         <>
-            <TechList />
-            <Charts/>
+            <TechList handlerOnClick={handlerOnClickChart}/>
+            <Charts valuesChart={valuesChart}/>
         </>
     );
 }
