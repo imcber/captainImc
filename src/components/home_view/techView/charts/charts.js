@@ -5,13 +5,17 @@ export const CircleChart = (props) =>{
     const thisItem = props.item;
     const textRange = thisItem.type === "NAT"?(parseFloat(thisItem.range)/10):thisItem.range;
     const text = textRange  + ' ' + thisItem.text;
-    let styleAnim = {}; 
     const refChart = useRef(null);
 
     useEffect(() => {
-        const {currentChart} = refChart;
-        console.log(currentChart);
-        //styleAnim = {animation:'progress 1s ease-out forwards'};
+        let thisChart = refChart;
+        setTimeout(()=>{
+            thisChart.current.style.animation = 'progress 1s ease-out forwards';
+            thisChart.current.style.strokeDasharray = thisItem.range +', 100';
+        },200);
+        return(() => {
+            thisChart.current.style.animation = ''; 
+        });
     });
     return(
         <div className={'single-chart'}>
@@ -19,9 +23,9 @@ export const CircleChart = (props) =>{
                 <path className='circle-bg'
                     d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831'
                 />
-                <path className='circle' 
+                <path ref={refChart} className='circle' 
                     d='M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831'
-                    strokeDasharray={thisItem.range +', 100'}
+                    strokeDasharray='0, 100'
                 />
                 <text x='18' y='20.35' className='percentage'>{text}</text>
             </svg>

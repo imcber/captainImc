@@ -26,12 +26,12 @@
     flex-wrap: wrap;
     justify-content: space-around;
     height: 75%;
-    padding-top: 5%;
+    padding-top: 5em;
     padding-left: 2em;
 }
 
 .tech-charts{
-    width: 45em;
+    width: 100%;
     background:#17252A;
     height: 100%;
     right: 0;

@@ -45,9 +45,11 @@ const Charts = (props) => {
     ];
 
     return(
-        <ElementsContainer class={'tech-charts'}>
-            {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
-        </ElementsContainer>
+        <div style={{float:"right",width:'55%'}}>
+            <ElementsContainer class={'tech-charts'}>
+                {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
+            </ElementsContainer>  
+        </div>
     );
 };
 
@@ -81,9 +83,11 @@ const TechList = (props) =>{
     }
 
     return(
-        <ElementsContainer class={'tech-container'}>
-            {list.map((item) => <ItemList key={item.name} itemList={item}/>)}
-        </ElementsContainer>
+        <div style={{float:"left",width:'45%'}}>
+            <ElementsContainer class={'tech-container'}>
+                {list.map((item) => <ItemList key={item.name} itemList={item}/>)}
+            </ElementsContainer>
+        </div>
     );
 };
 
@@ -91,7 +95,7 @@ const TechList = (props) =>{
 const TechContent = () => {
 
     //chart values
-    const [valuesChart,setValuesChart] = useState({exp:'10',use:'0'});
+    const [valuesChart,setValuesChart] = useState({exp:'0',use:'0'});
     const handlerOnClickChart = (thisItem) =>{
         setValuesChart({exp:thisItem.exp,use:thisItem.use});
     };
