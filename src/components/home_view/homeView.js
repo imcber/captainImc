@@ -37,9 +37,10 @@ function HomeView(props){
 }
 
 export const SectionContainer = props =>{
+    const classHeader = 'title-container-body ' + (props.classHeader?props.classHeader:'');
     return(
         <section id={props.id} className={'section-container'} style={{background:'#DEF2F1'}}>
-            <div className={'title-container-body'}>
+            <div className={classHeader}>
                 <span>{props.title}</span>
             </div>
             <div className={'rest-container-body'} style={props.style}>

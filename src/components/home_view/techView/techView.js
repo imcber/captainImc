@@ -20,7 +20,7 @@ const TechView = () =>{
     //GET DATA JSON
     const getDataLeg = useStateData();
     return(
-        <SectionContainer id={'techView'} title={getDataLeg('lg.menu.tech.title')} style={{display:'flex'}}>
+        <SectionContainer id={'techView'} title={getDataLeg('lg.menu.tech.title')} style={{display:'flex'}} classHeader={'header-tech-section'}>
             <TechContent />
         </SectionContainer>
     );

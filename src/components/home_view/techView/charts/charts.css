@@ -8,12 +8,11 @@
   .circular-chart {
     max-width: 80%;
     max-height: 80%;
-    padding-top: 5%;
   }
   
   .circle-bg {
     fill: none;
-    stroke: #DEF2F1;
+    stroke: #000000;
     stroke-width: 3.8;
   }
   
@@ -28,13 +27,15 @@
       stroke-dasharray: 0 100;
     }
   }
-  
-  .circular-chart.orange .circle {
-    stroke: #ff9f00;
-  }
 
-  .percentage {
+  .chart-value {
     fill: #DEF2F1;
     font-size: 0.5em;
+    text-anchor: middle;
+  }
+
+  .chart-type {
+    fill: #DEF2F1;
+    font-size: 0.3em;
     text-anchor: middle;
   }
