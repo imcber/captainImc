@@ -47,7 +47,7 @@ const Charts = (props) => {
     return(
         <div style={{float:"right",width:'55%'}}>
             <ElementsContainer class={'tech-charts'}>
-                {chartsList.map((item) => <CircleChart key={item.key} item={item}/>) }
+                {chartsList.map((item) => <CircleChart key={item.key} item={item}/>)}
             </ElementsContainer>  
         </div>
     );

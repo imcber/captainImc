@@ -9,11 +9,12 @@
 .circular-chart {
   max-width: 80%;
   max-height: 80%;
+  fill: #DEF2F1;
 }
 
 .circle-bg {
   fill: none;
-  stroke: #DEF2F1;
+  stroke: #132c35;
   stroke-width: 2.8;
 }
 
@@ -30,13 +31,16 @@
 }
 
 .chart-value {
-  fill: #DEF2F1;
   font-size: 0.5em;
   text-anchor: middle;
 }
 
 .chart-type {
-  fill: #DEF2F1;
   font-size: 0.3em;
+  text-anchor: middle;
+}
+
+.chart-descr{
+  font-size: 0.2em;
   text-anchor: middle;
 }

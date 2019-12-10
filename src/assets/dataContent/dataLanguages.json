@@ -14,7 +14,7 @@
                 "title":"Tech",
                 "charts":{
                     "exp":"Experiencia",
-                    "use":"Frecuencia",
+                    "use":"Frecuencia de uso",
                     "years":"años"
                 }
             },"work":{
@@ -30,15 +30,15 @@
             "about":{
                 "title":"About",
                 "titleView":"I am Ekatl, Fullstack developer from Mexico living in Querétaro and i believe in climate change",
-                "summary-me":"I am a self-taught person, all the day i'm read documentation about the best tech for me or posts in Dev.to and Medium, with this i learn Javascript, React, Angular, ...rest and for now i study UX.",
-                "summary-work":"I´m work in 'Santander Tecnologia' developing web applications with Java, JavaScript, Jquery and Oracle, i'm work with three projects, one is in development and the rest in maintance, these were deployed in a production environment. For this i´m look a new oportunity to can expand and use the rest of my knowledge.",
-                "summary-second":"Start mi career as developer upon leave the university as a software engineer in September 2017, at once got my first job in Open Road as developer, then HRLSystems offered me a better job opportunity, in July 2018 my boss offer my work in the bank Santander for a project near to end. In february 2019, the client asked me to develop with them the products that i have today.",
-                "summary-myjob":"I also develop independent products with a designer from Mexico city, this help me to practice the tech that i cant use in the office. I´m work at the nigth, never tired of programming."
+                "summary-me":"I am a self-taught person, all the day i'm read documentation about the best tech for me or posts in Dev.to and Medium, with this i learn JavaScript, React, Angular, ...rest and for now i study UX.",
+                "summary-work":"I´m work in 'Santander Tecnologia' developing web applications with Java, JavaScript, Jquery and Oracle, i'm work with three projects, one is in development and the rest in maintenance, these were deployed in a production environment. For this i´m look a new opportunity to can expand and use the rest of my knowledge.",
+                "summary-second":"Start my career as developer upon leave the university as a software engineer in September 2017, at once got my first job in Open Road as developer, then HRLSystems offered me a better job opportunity, in July 2018 my boss offers my work in the bank Santander for a project near to end. In february 2019, the client asked me to develop with them the products that i have today.",
+                "summary-myjob":"I also develop independent products with a designer from Mexico city, this help me to practice the tech that i can't use in the office. I´m work at the nigth, never tired of programming."
             },"tech":{
                 "title":"Tech",
                 "charts":{
                     "exp":"Experience",
-                    "use":"Frequency",
+                    "use":"Frequency of use",
                     "years":"years"
                 }
             },"work":{

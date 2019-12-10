@@ -23,7 +23,7 @@ export const CircleChart = (props) =>{
     });
     return(
         <div className={'single-chart'}>
-            <svg viewBox='0 0 36 36' className='circular-chart'>
+            <svg viewBox='0 0 36 46' className='circular-chart'>
                 <StrokeGradient listColors={listColorsStroke} posLineGrad={{x1:"0%",y1:"100%",x2:"0%",y2:"0%"}} id={'gradientIn'}/>
                 <PathSvg 
                     class={'circle-bg'} 
@@ -38,6 +38,7 @@ export const CircleChart = (props) =>{
                 />
                 <text x='18' y='18' className='chart-value'>{textRange}</text>
                 <text x='18' y='25' className='chart-type'>{text}</text>
+                <text x='18' y='40' className='chart-descr'>{thisItem.name}</text>
             </svg>
         </div>
     );
