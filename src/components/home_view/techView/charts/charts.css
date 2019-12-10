@@ -1,41 +1,42 @@
 .single-chart {
-    width: 100%;
+    width: 50%;
     text-align: center;
-    height: 50%;
+    height: auto;
     float: left;
+    padding-top: 13%;
   }
   
-  .circular-chart {
-    max-width: 80%;
-    max-height: 80%;
-  }
-  
-  .circle-bg {
-    fill: none;
-    stroke: #000000;
-    stroke-width: 3.8;
-  }
-  
-  .circle {
-    fill: none;
-    stroke-width: 2.8;
-    stroke-linecap: round;
-  }
-  
-  @keyframes progress {
-    0% {
-      stroke-dasharray: 0 100;
-    }
-  }
+.circular-chart {
+  max-width: 80%;
+  max-height: 80%;
+}
 
-  .chart-value {
-    fill: #DEF2F1;
-    font-size: 0.5em;
-    text-anchor: middle;
-  }
+.circle-bg {
+  fill: none;
+  stroke: #DEF2F1;
+  stroke-width: 2.8;
+}
 
-  .chart-type {
-    fill: #DEF2F1;
-    font-size: 0.3em;
-    text-anchor: middle;
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
   }
+}
+
+.chart-value {
+  fill: #DEF2F1;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+.chart-type {
+  fill: #DEF2F1;
+  font-size: 0.3em;
+  text-anchor: middle;
+}

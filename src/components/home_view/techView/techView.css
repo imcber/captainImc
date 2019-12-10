@@ -13,12 +13,10 @@
     cursor: pointer;
 }
 
-
 .tech-item > img{
     height: 4em;
-    transition: all 500ms cubic-bezier(.25,.46,.45,.94);
+    transition: all 250ms linear;
 }
-
 
 .tech-item > img:hover{
     height: 6em;

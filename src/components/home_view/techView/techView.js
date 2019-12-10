@@ -67,17 +67,20 @@ const TechList = (props) =>{
         {name:'C#',icon:csharpTech,exp:'20',use:'30'}
     ];
 
+    //EVENT TO CHANGE THE VALUES OF THE CHART
     const handlerOnClick = props.handlerOnClick;
+    const actualSelect = props.actualSelect;
 
     //EACH ITEM OF LIST
     const ItemList = props => {
         let thisItem = props.itemList;
+        const styleSelect = thisItem.name === actualSelect?{height:'6em'}:{};
         const thisHandlerClick = () =>{
             handlerOnClick(thisItem);
         }
         return(
             <div className={'tech-item'}>
-                <img src={thisItem.icon} onClick={thisHandlerClick}></img>
+                <img src={thisItem.icon} onClick={thisHandlerClick} style={styleSelect}></img>
             </div>
         );
     }
@@ -96,13 +99,16 @@ const TechContent = () => {
 
     //chart values
     const [valuesChart,setValuesChart] = useState({exp:'0',use:'0'});
+    const [actualSelect,setActualSelect] = useState('');
+
     const handlerOnClickChart = (thisItem) =>{
         setValuesChart({exp:thisItem.exp,use:thisItem.use});
+        setActualSelect(thisItem.name);
     };
 
     return(
         <>
-            <TechList handlerOnClick={handlerOnClickChart}/>
+            <TechList handlerOnClick={handlerOnClickChart} actualSelect={actualSelect}/>
             <Charts valuesChart={valuesChart}/>
         </>
     );
