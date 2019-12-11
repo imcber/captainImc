@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import './techView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';

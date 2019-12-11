@@ -18,7 +18,29 @@
                     "years":"años"
                 }
             },"work":{
-                "title":"Trabajo"
+                "title":"Trabajo",
+                "sites":[
+                    {
+                        "url":"",
+                        "name":"Beravi",
+                        "desc":"Pagina web la cual esta enfocada en presentar y ofrecen los servicios de contables de una empresa. Tambien se especifica el tipo de clientes esperado y la proyeccion que se tiene."
+                    },
+                    {
+                        "url":"",
+                        "name":"Leafire",
+                        "desc":"El objetivo de esta web es presentar el lanzamiento de diferentes productos cannabicos, en donde se muestra las especificaciones de cada uno en graficas."
+                    },
+                    {
+                        "url":"",
+                        "name":"CTHC",
+                        "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
+                    },
+                    {
+                        "url":"",
+                        "name":"DevSpace",
+                        "desc":"Esta web presenta un equipo de desarrollo de software, en donde se muestra los trabajos hechos, plantillas genericas en venta y la presentacion de servicio de desarrollo de software."
+                    }
+                ]
             },"contact":{
                 "title":"Contacto"
             }
@@ -42,7 +64,29 @@
                     "years":"years"
                 }
             },"work":{
-                "title":"Work"
+                "title":"Work",
+                "sites":[
+                    {
+                        "url":"",
+                        "name":"Beravi",
+                        "desc":"Pagina web la cual esta enfocada en presentar y ofrecen los servicios de contables de una empresa. Tambien se especifica el tipo de clientes esperado y la proyeccion que se tiene."
+                    },
+                    {
+                        "url":"",
+                        "name":"Leafire",
+                        "desc":"El objetivo de esta web es presentar el lanzamiento de diferentes productos cannabicos, en donde se muestra las especificaciones de cada uno en graficas."
+                    },
+                    {
+                        "url":"",
+                        "name":"CTHC",
+                        "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
+                    },
+                    {
+                        "url":"",
+                        "name":"DevSpace",
+                        "desc":"Esta web presenta un equipo de desarrollo de software, en donde se muestra los trabajos hechos, plantillas genericas en venta y la presentacion de servicio de desarrollo de software."
+                    }
+                ]
             },"contact":{
                 "title":"Contact"
             }

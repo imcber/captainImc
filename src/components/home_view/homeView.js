@@ -2,6 +2,7 @@ import React from 'react';
 import IntroView from './introView/introView';
 import AboutView from './aboutView/aboutView';
 import TechView from './techView/techView';
+import WorkView from './workView/workView';
 import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
@@ -32,6 +33,7 @@ function HomeView(props){
             <IntroView />
             <AboutView />
             <TechView />
+            <WorkView />
         </StateProvider>
     );
 }
