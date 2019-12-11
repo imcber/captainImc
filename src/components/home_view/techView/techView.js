@@ -86,7 +86,7 @@ const TechList = (props) =>{
     }
 
     return(
-        <div style={{float:"left",width:'45%'}}>
+        <div style={{float:"left",width:'45%',background:'#17252A'}}>
             <ElementsContainer class={'tech-container'}>
                 {list.map((item) => <ItemList key={item.name} itemList={item}/>)}
             </ElementsContainer>
