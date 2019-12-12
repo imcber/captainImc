@@ -11,37 +11,39 @@ const WorkView = () =>{
     const listJsonSites = getDataLeg('lg.menu.work.sites');
     //OBJECT OF ACTUAL ACTUAL SITE TO DISPLAY
     const [actualWorkDisp,setActualWorkDisp] = useState(listJsonSites[0]);
+
+    const handlerClick = item =>{
+        setActualWorkDisp(item)
+    };
     
     return(
-        <SectionContainer id={'workView'} title={getDataLeg('lg.menu.work.title')} style={{display:'flex'}} classHeader={''}>
+        <SectionContainer id={'workView'} title={getDataLeg('lg.menu.work.title')} style={{display:'flex'}} classHeader={'header-work-section'}>
             <WorkContent actualWorkDisp={actualWorkDisp}/>
-            <ListSitesSection listJsonSites={listJsonSites}/>
+            <ListSitesSection listJsonSites={listJsonSites} numList={3} handlerClick={handlerClick}/>
         </SectionContainer>
     );
 };
-
+export default WorkView;
 //SECTION OF WORK LIST
 const ListSitesSection = props => {
     //LIST OF ALL SITES
     const listJsonSites = props.listJsonSites;
-    let listPagination = [];
-    let listAuxTemp = [];
-    listJsonSites.map((item,indx) => {
-        if(indx < props.lengthDisplay){
-            listAuxTemp.push(item);
-        }else{
-            listPagination.push(listAuxTemp);
-            listAuxTemp = [];
-            
-        }
-    });
+    const numListDisplay = props.numList;
+    let listPagination = getListPagination(listJsonSites,numListDisplay);
+    const [listDisplay,setListPagination] = useState(listPagination[0]);
+    const onHandlerClick = props.handlerClick;
 
     //CARD OF EACH SITE
     const CardSite = props => {
         const thisItem = props.item;
-        const heightDina = (100/3)+'%';
+        const heightDina = (100/numListDisplay)+'%';
+
+        const clickFunction = () => {
+            onHandlerClick(thisItem);
+        };
+
         return(
-            <div className={'card-site'} style={{height:heightDina}}>
+            <div className={'card-site'} style={{height:heightDina}} onClick={clickFunction}>
                 <span>{thisItem.name}</span>
             </div>
         );
@@ -49,7 +51,7 @@ const ListSitesSection = props => {
 
     return(
         <div className={'list-site-section'}>
-            {listJsonSites.map(item => <CardSite item={item}/>)}
+            {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
         </div>
     );
 };
@@ -93,5 +95,24 @@ const WorkContent = props =>{
     );
 };
 
+const getListPagination = (listOriginal,numInd) => {
+    let listAuxTemp = [];
+    let indx = 1;
+    let listResponse = [];
+    
+    listOriginal.map((item) => {
+        if(indx > numInd){
+            listResponse.push(listAuxTemp);
+            listAuxTemp = new Array();
+            indx =0;
+        }
+        
+        listAuxTemp.push(item);
+        indx++;
+    });
 
-export default WorkView;
+    if(listResponse.length < 1){
+        listResponse.push(listAuxTemp);
+    }
+    return listResponse;
+};
