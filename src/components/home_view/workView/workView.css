@@ -11,10 +11,13 @@
 }
 
 .list-site-section{
-    width: 35%;
-    height: 100%;
+    height: 85%;
     background: #DEF2F1;
     color: #17252A;
+}
+
+.navigation-list-sites{
+    height: 15%;
 }
 
 .card-site{

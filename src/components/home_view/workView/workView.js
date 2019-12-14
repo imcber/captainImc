@@ -50,8 +50,13 @@ const ListSitesSection = props => {
     };
 
     return(
-        <div className={'list-site-section'}>
-            {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
+        <div style={{height:'100%',width:'35%'}}>     
+            <div className={'list-site-section'}>
+                {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
+            </div>
+            <div className={'navigation-list-sites'}>
+
+            </div>
         </div>
     );
 };
