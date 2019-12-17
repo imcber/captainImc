@@ -14,6 +14,7 @@
     height: 85%;
     background: #DEF2F1;
     color: #17252A;
+    display: flex;
 }
 
 .navigation-list-sites{
@@ -21,6 +22,11 @@
 }
 
 .card-site{
-    width: 80%;
     padding: 0 10% 0 10%;
+}
+
+.navigation-list-button{
+    width: 10%;
+    text-align: center;
+    padding-top: 50%;
 }

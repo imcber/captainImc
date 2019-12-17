@@ -10,7 +10,7 @@ const WorkView = () =>{
     //GET LIST OF MY WORK
     const listJsonSites = getDataLeg('lg.menu.work.sites');
     //OBJECT OF ACTUAL ACTUAL SITE TO DISPLAY
-    const [actualWorkDisp,setActualWorkDisp] = useState(listJsonSites[0]);
+    const [actualWorkDisp,setActualWorkDisp] = useState(listJsonSites.beravi);
 
     const handlerClick = item =>{
         setActualWorkDisp(item)
@@ -19,7 +19,7 @@ const WorkView = () =>{
     return(
         <SectionContainer id={'workView'} title={getDataLeg('lg.menu.work.title')} style={{display:'flex'}} classHeader={'header-work-section'}>
             <WorkContent actualWorkDisp={actualWorkDisp}/>
-            <ListSitesSection listJsonSites={listJsonSites} numList={3} handlerClick={handlerClick}/>
+            <ListSitesSection listJsonSites={listJsonSites} numList={2} handlerClick={handlerClick}/>
         </SectionContainer>
     );
 };
@@ -32,7 +32,6 @@ const ListSitesSection = props => {
     let listPagination = getListPagination(listJsonSites,numListDisplay);
     const [listDisplay,setListPagination] = useState(listPagination[0]);
     const onHandlerClick = props.handlerClick;
-
     //CARD OF EACH SITE
     const CardSite = props => {
         const thisItem = props.item;
@@ -50,12 +49,20 @@ const ListSitesSection = props => {
     };
 
     return(
-        <div style={{height:'100%',width:'35%'}}>     
+        <div style={{width:'35%'}}>
             <div className={'list-site-section'}>
-                {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
+                <div className={'navigation-list-button'}>
+                    <span>{'<'}</span>
+                </div>
+                <div style={{width:'80%'}}>
+                    {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
+                </div>
+                <div className={'navigation-list-button'}>
+                    <span>{'>'}</span>
+                </div>
             </div>
             <div className={'navigation-list-sites'}>
-
+                
             </div>
         </div>
     );
@@ -105,19 +112,17 @@ const getListPagination = (listOriginal,numInd) => {
     let indx = 1;
     let listResponse = [];
     
-    listOriginal.map((item) => {
+    Object.keys(listOriginal).map((item) => {
         if(indx > numInd){
             listResponse.push(listAuxTemp);
             listAuxTemp = new Array();
-            indx =0;
+            indx = 1;
         }
         
-        listAuxTemp.push(item);
+        listAuxTemp.push(listOriginal[item]);
         indx++;
     });
 
-    if(listResponse.length < 1){
-        listResponse.push(listAuxTemp);
-    }
+    listResponse.push(listAuxTemp);
     return listResponse;
 };
