@@ -30,3 +30,16 @@
     text-align: center;
     padding-top: 50%;
 }
+
+.img-display{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.img-card{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    float: right;
+}
