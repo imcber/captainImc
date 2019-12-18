@@ -17,7 +17,7 @@ const WorkView = () =>{
     //GET DATA JSON
     const getDataLeg = useStateData();
     //NUM OF CARDS TO DISPLAY
-    const numListDisplay = 2;
+    const numListDisplay = 3;
     //GET LIST OF MY WORK
     const listJsonSites = getDataLeg('lg.menu.work.sites');
     //GET LIST OF LIST TO DISPLAY
@@ -70,11 +70,12 @@ const ListSitesSection = props => {
     //NAVIGATION BUTOON TO LIST SITES
     const NavigationButton = props =>{
         const navDirection = props.direction === "prev"?'<':'>';
+        const thisStyle = props.style;
         const clickNavigate = () =>{
             navigatePagination(props.direction);
         };
         return(
-            <div className={'navigation-list-button'} onClick={clickNavigate}>
+            <div className={'navigation-list-button'} onClick={clickNavigate} style={thisStyle}>
                 <span>{navDirection}</span>
             </div>
         );
@@ -92,10 +93,10 @@ const ListSitesSection = props => {
         <div style={{width:'35%'}}>
             <div className={'list-site-section'}>
                 {listPagination.length > 1 && <NavigationButton direction={'prev'}/>}
-                <div style={{width:'80%'}}>
+                {listPagination.length > 1 && <NavigationButton direction={'next'} style={{right:'0'}}/>}
+                <div style={{width:'100%',height:'100%'}}>
                     {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
                 </div>
-                {listPagination.length > 1 && <NavigationButton direction={'next'}/>}
             </div>
             <div className={'navigation-list-sites'}>
                 

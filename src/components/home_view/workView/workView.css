@@ -14,7 +14,7 @@
     height: 85%;
     background: #DEF2F1;
     color: #17252A;
-    display: flex;
+    position: relative;
 }
 
 .navigation-list-sites{
@@ -22,13 +22,16 @@
 }
 
 .card-site{
-    padding: 0 10% 0 10%;
+    padding: 2% 5% 0 5%;
 }
 
 .navigation-list-button{
     width: 10%;
     text-align: center;
     padding-top: 50%;
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
 }
 
 .img-display{
@@ -38,8 +41,8 @@
 }
 
 .img-card{
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
     float: right;
 }

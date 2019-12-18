@@ -34,6 +34,11 @@
                         "url":"",
                         "name":"CTHC",
                         "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
+                    },
+                    "otro":{
+                        "url":"",
+                        "name":"otro",
+                        "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
                     }
                 }
             },"contact":{
@@ -74,6 +79,11 @@
                     "cthc":{
                         "url":"",
                         "name":"CTHC",
+                        "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
+                    },
+                    "otro":{
+                        "url":"",
+                        "name":"otro",
                         "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
                     }
                 }
