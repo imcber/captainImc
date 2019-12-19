@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import './workView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
+import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io';
+import {IconContext} from 'react-icons';
 
 const beraviImg = require('../../../assets/img/sites/Beravi.jpg');
 const leafireImg = require('../../../assets/img/sites/Beravi.jpg');
@@ -9,7 +11,8 @@ const cthcImg = require('../../../assets/img/sites/Beravi.jpg');
 const listImgSites = {
     beravi:beraviImg,
     leafire:leafireImg,
-    cthc:cthcImg
+    cthc:cthcImg,
+    otro:cthcImg,
 };
 
 //INIT WORK VIEW
@@ -17,7 +20,7 @@ const WorkView = () =>{
     //GET DATA JSON
     const getDataLeg = useStateData();
     //NUM OF CARDS TO DISPLAY
-    const numListDisplay = 3;
+    const numListDisplay = 2;
     //GET LIST OF MY WORK
     const listJsonSites = getDataLeg('lg.menu.work.sites');
     //GET LIST OF LIST TO DISPLAY
@@ -53,7 +56,7 @@ const ListSitesSection = props => {
     //CARD OF EACH SITE
     const CardSite = props => {
         const thisItem = props.item;
-        const heightDina = (100/numListDisplay)+'%';
+        const heightDina = ((100/numListDisplay)-2)+'%';
 
         const clickFunction = () => {
             onHandlerClick(thisItem);
@@ -61,22 +64,35 @@ const ListSitesSection = props => {
 
         return(
             <div className={'card-site'} style={{height:heightDina}} onClick={clickFunction}>
-                <span>{thisItem.name}</span>
-                <img src={thisItem.img} alt={thisItem.name} className={'img-card'}></img>
+                <div>
+                    <span className={'title-card'}>{thisItem.name}</span>
+                </div>
+                <div style={{display:'flex'}}>
+                    <div style={{display:'grid',width:'65%',alignItems:'center'}}>
+                        <span className='summary-card'>{thisItem.desc}</span>
+                    </div>
+                    <div className={'card-container'}>
+                        <img src={thisItem.img} alt={thisItem.name} className={'img-card'}></img>
+                    </div>
+                </div>
             </div>
         );
     };
 
     //NAVIGATION BUTOON TO LIST SITES
     const NavigationButton = props =>{
-        const navDirection = props.direction === "prev"?'<':'>';
+        const navDirection = props.direction === "prev"?<IoIosArrowBack />:<IoIosArrowForward />;
         const thisStyle = props.style;
         const clickNavigate = () =>{
             navigatePagination(props.direction);
         };
         return(
             <div className={'navigation-list-button'} onClick={clickNavigate} style={thisStyle}>
-                <span>{navDirection}</span>
+                <span>
+                    <IconContext.Provider value={{size:'4em'}}>
+                        {navDirection}
+                    </IconContext.Provider>
+                </span>
             </div>
         );
     };
@@ -97,9 +113,6 @@ const ListSitesSection = props => {
                 <div style={{width:'100%',height:'100%'}}>
                     {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
                 </div>
-            </div>
-            <div className={'navigation-list-sites'}>
-                
             </div>
         </div>
     );
