@@ -6,13 +6,25 @@ import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io';
 import {IconContext} from 'react-icons';
 
 const beraviImg = require('../../../assets/img/sites/Beravi.jpg');
-const leafireImg = require('../../../assets/img/sites/Beravi.jpg');
-const cthcImg = require('../../../assets/img/sites/Beravi.jpg');
-const listImgSites = {
-    beravi:beraviImg,
-    leafire:leafireImg,
-    cthc:cthcImg,
-    otro:cthcImg,
+const cthcImg = require('../../../assets/img/sites/captain.jpg');
+const leafireImg = require('../../../assets/img/sites/leafire.jpg');
+const listDataSites = {
+    beravi:{
+        img:beraviImg,
+        url:'https://beravi.herokuapp.com/'
+    },
+    leafire:{
+        img:leafireImg,
+        url:'https://leafire.herokuapp.com/'
+    },
+    cthc:{
+        img:cthcImg,
+        url:'https://beravi.herokuapp.com/'
+    },
+    otro:{
+        img:leafireImg,
+        url:'https://leafire.herokuapp.com/'
+    },
 };
 
 //INIT WORK VIEW
@@ -109,13 +121,13 @@ const ListSitesSection = props => {
         listSitesRef.current.style.opacity = '0';
         setNumList(newNumPag);
     };
-
+    
     useEffect(() => {
         let thisRefListSite = listSitesRef;
         setTimeout(() =>{
             thisRefListSite.current.style.animation = 'navigation-sites 350ms linear';
             thisRefListSite.current.style.opacity = '1';
-        },250);
+        },350);
         return(() => {
             thisRefListSite.current.style.animation = '';
         });
@@ -145,6 +157,7 @@ const WorkContent = props =>{
     const BigViewSite = () =>{
         //Work that display in the view
         const actualSite = actualWorkDisp;
+        //CONTAINER OF EACH ITEM OF BIG VIEW
         const ContainerInView = props =>{
             const objStyle = props.style;
             objStyle.width = '100%';
@@ -153,6 +166,10 @@ const WorkContent = props =>{
                     {props.children}
                 </div>
             );
+        };
+        //FUNCTION TO OPEN NEW WINDOW WITH THE SITE
+        const goSite = () =>{
+            window.open(actualSite.url, '_blank');
         };
 
         return(
@@ -170,7 +187,7 @@ const WorkContent = props =>{
                 <ContainerInView style={{height:'25%'}}>
                     <div className={'big-view-desc-container'}>
                         <span className={'big-view-desc'}>{actualSite.desc}</span>
-                        <button className='btn-explore'>{getDataLeg('lg.menu.work.go')}</button>
+                        <button className='btn-explore' onClick={goSite}>{getDataLeg('lg.menu.work.go')}</button>
                     </div>
                 </ContainerInView>
             </div>
@@ -196,7 +213,8 @@ const getListPagination = (listOriginal,numInd) => {
             listAuxTemp = new Array();
             indx = 1;
         }
-        listOriginal[item].img = listImgSites[item.toLowerCase()];
+        listOriginal[item].img = listDataSites[item.toLowerCase()].img;
+        listOriginal[item].url = listDataSites[item.toLowerCase()].url;
         listAuxTemp.push(listOriginal[item]);
         indx++;
     });
