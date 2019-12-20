@@ -6,13 +6,64 @@
 .header-work-section > span{
     color: #DEF2F1;
 }
-
+/*STYLES OF PRINCIPAL SITE*/
 .big-view-site{
     width: 65%;
     height: 100%;
     display: flex;
     flex-direction: column;
     color: #DEF2F1;
+}
+
+.big-view-title{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    padding: 0 0 0 3%;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: #3AAFA9;
+}
+
+.big-view-desc-container{
+    display: flex;
+    height: 100%;
+}
+
+.big-view-desc{
+    width: 94%;
+    padding: 0 3% 0 3%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+}
+
+.btn-explore{
+    width: 6em;
+    height: 3em;
+    background-color: #3AAFA9;
+    border: none;
+    text-transform: uppercase;
+    color: #DEF2F1;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 1s ease;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-explore:hover{
+    background-color: #3c8581;
+}
+
+/*STYLES FO LIST SITES*/
+
+.list-site-section-container{
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+    opacity: 1;
+    padding: 0 5% 0 5%;
 }
 
 .list-site-section{
@@ -28,9 +79,9 @@
     position: absolute;
     cursor: pointer;
     height: 61%;
-    color: #ffffff14;
+    color: #ffffff0d;
     transition: all 250ms linear;
-    font-family: 'Poppins', sans-serif;
+    z-index: 2;
 }
 
 .navigation-list-button:hover{
@@ -41,26 +92,26 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: 0 0;
 }
 
 /* STYLE OF CARDS LIST */
 .card-site{
     margin: 2% 5% 0 5%;
-    cursor: pointer;
 }
 
 .img-card{
     object-fit: cover;
+    width: 100%;
 }
 
 .card-container{
     width: 30%;
-    height: 100%;
     float: right;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    margin: 0 0 0 4%;
+    margin: 0 0 0 7%;
 }
 
 .title-card{
@@ -71,5 +122,15 @@
 .summary-card{
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 65%;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
 }
+
+@keyframes navigation-sites {
+    0% {
+       opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+ } 

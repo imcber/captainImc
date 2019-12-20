@@ -40,7 +40,8 @@
                         "name":"otro",
                         "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
                     }
-                }
+                },
+                "go":"IR"
             },"contact":{
                 "title":"Contacto"
             }
@@ -86,7 +87,8 @@
                         "name":"otro",
                         "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
                     }
-                }
+                },
+                "go":"GO"
             },"contact":{
                 "title":"Contact"
             }

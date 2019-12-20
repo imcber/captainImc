@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import './workView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
@@ -20,7 +20,7 @@ const WorkView = () =>{
     //GET DATA JSON
     const getDataLeg = useStateData();
     //NUM OF CARDS TO DISPLAY
-    const numListDisplay = 2;
+    const numListDisplay = 3;
     //GET LIST OF MY WORK
     const listJsonSites = getDataLeg('lg.menu.work.sites');
     //GET LIST OF LIST TO DISPLAY
@@ -53,6 +53,8 @@ const ListSitesSection = props => {
     const listDisplay = listPagination[numList];
     //EVENT TO CHANGE SITE
     const onHandlerClick = props.handlerClick;
+    //CONTAINER LIST SITES REF
+    const listSitesRef = useRef(null);
     //CARD OF EACH SITE
     const CardSite = props => {
         const thisItem = props.item;
@@ -64,15 +66,17 @@ const ListSitesSection = props => {
 
         return(
             <div className={'card-site'} style={{height:heightDina}} onClick={clickFunction}>
-                <div>
-                    <span className={'title-card'}>{thisItem.name}</span>
-                </div>
-                <div style={{display:'flex'}}>
-                    <div style={{display:'grid',width:'65%',alignItems:'center'}}>
-                        <span className='summary-card'>{thisItem.desc}</span>
+                <div style={{height:'auto', cursor:'pointer'}}>
+                    <div>
+                        <span className={'title-card'}>{thisItem.name}</span>
                     </div>
-                    <div className={'card-container'}>
-                        <img src={thisItem.img} alt={thisItem.name} className={'img-card'}></img>
+                    <div style={{display:'flex'}}>
+                        <div style={{display:'grid',width:'63%',alignItems:'center'}}>
+                            <span className='summary-card'>{thisItem.desc}</span>
+                        </div>
+                        <div className={'card-container'}>
+                            <img src={thisItem.img} alt={thisItem.name} className={'img-card'}></img>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,15 +106,27 @@ const ListSitesSection = props => {
         let newNumPag = position === "next"?numList+1:numList-1;
         //IF NEW NUM IS > OF LENGTH LIST PAGINATION, RETURN THE FIRST. IF NEW NUM IS LESS THAN 0, SO SET THE LAST OF LIST PAGINATION
         newNumPag = newNumPag >= listPagination.length?0:newNumPag < 0?listPagination.length - 1:newNumPag;
+        listSitesRef.current.style.opacity = '0';
         setNumList(newNumPag);
     };
+
+    useEffect(() => {
+        let thisRefListSite = listSitesRef;
+        setTimeout(() =>{
+            thisRefListSite.current.style.animation = 'navigation-sites 350ms linear';
+            thisRefListSite.current.style.opacity = '1';
+        },250);
+        return(() => {
+            thisRefListSite.current.style.animation = '';
+        });
+    });
 
     return(
         <div style={{width:'35%'}}>
             <div className={'list-site-section'}>
                 {listPagination.length > 1 && <NavigationButton direction={'prev'}/>}
                 {listPagination.length > 1 && <NavigationButton direction={'next'} style={{right:'0'}}/>}
-                <div style={{width:'100%',height:'100%'}}>
+                <div className={'list-site-section-container'} ref={listSitesRef}>
                     {listDisplay.map(item => <CardSite item={item} key={item.name.toUpperCase()}/>)}
                 </div>
             </div>
@@ -120,6 +136,9 @@ const ListSitesSection = props => {
 
 //CONTENT OF ALL THE VIEW
 const WorkContent = props =>{
+    //GET DATA JSON
+    const getDataLeg = useStateData();
+    //SITE TO DISPLAY IN BIG VIEW
     const actualWorkDisp = props.actualWorkDisp;
 
     //THIS SHOW DE ACTUAL IMG AND INFO ABOUT SELECTED SITE
@@ -127,8 +146,10 @@ const WorkContent = props =>{
         //Work that display in the view
         const actualSite = actualWorkDisp;
         const ContainerInView = props =>{
+            const objStyle = props.style;
+            objStyle.width = '100%';
             return(
-                <div style={{width:'100%',height:props.height}}>
+                <div style={objStyle}>
                     {props.children}
                 </div>
             );
@@ -136,15 +157,21 @@ const WorkContent = props =>{
 
         return(
             <div className={'big-view-site'}>
-                <ContainerInView height={'15%'}>
-                    <span style={{float:"left"}}>{actualSite.name}</span>
-                    <span style={{float:"right"}}>GO</span>
-                </ContainerInView>
-                <ContainerInView height={'65%'}>
+                <ContainerInView style={{height:'59%',padding:'3% 0 3% 0'}}>
                     <img src={actualSite.img} alt={actualSite.name} className="img-display"></img>
                 </ContainerInView>
-                <ContainerInView height={'20%'}>
-                    <span style={{float:"left"}}>{actualSite.desc}</span>
+                <ContainerInView style={{height:'10%'}}>
+                    <div style={{width:'100%',height:'100%',display:'flex'}}>
+                        <div className={'big-view-title'}>        
+                                <span>{actualSite.name}</span>
+                        </div>
+                    </div>
+                </ContainerInView>
+                <ContainerInView style={{height:'25%'}}>
+                    <div className={'big-view-desc-container'}>
+                        <span className={'big-view-desc'}>{actualSite.desc}</span>
+                        <button className='btn-explore'>{getDataLeg('lg.menu.work.go')}</button>
+                    </div>
                 </ContainerInView>
             </div>
         );
@@ -157,6 +184,7 @@ const WorkContent = props =>{
     );
 };
 
+//GET ORDER LIST OF ALL SITES THAT WE ADD IN JSON OF DATA LANGUAGES
 const getListPagination = (listOriginal,numInd) => {
     let listAuxTemp = [];
     let indx = 1;
