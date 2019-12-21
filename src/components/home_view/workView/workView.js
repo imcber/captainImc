@@ -125,13 +125,13 @@ const ListSitesSection = props => {
     useEffect(() => {
         let thisRefListSite = listSitesRef;
         setTimeout(() =>{
-            thisRefListSite.current.style.animation = 'navigation-sites 350ms linear';
+            thisRefListSite.current.style.animation = 'navigation-sites 300ms linear';
             thisRefListSite.current.style.opacity = '1';
-        },350);
+        },300);
         return(() => {
             thisRefListSite.current.style.animation = '';
         });
-    });
+    },[numList]);
 
     return(
         <div style={{width:'35%'}}>
