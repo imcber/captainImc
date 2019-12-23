@@ -1,0 +1,40 @@
+.header-contact-section{
+    height: auto !important;
+}
+.header-contact-section>span{
+    /*background: linear-gradient(90deg, #DEF2F1 65%, #DEF2F1 65%);*/
+    color: #DEF2F1;
+    font-size: 7em;
+}
+.body-contact-section{
+    height: auto !important;
+}
+
+.body-container-contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-section{
+    color: #3AAFA9;
+    width:'100%';
+    display: grid;
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.list-social{
+    list-style: none;
+    display: flex;
+    padding-top: 5em;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.social-item{
+    margin: 0 0 0 2em;
+    cursor: pointer;
+}

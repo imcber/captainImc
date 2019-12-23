@@ -3,7 +3,6 @@ import './techView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
 import {CircleChart} from './charts/charts';
-import {FaHome,FaFacebookF,FaTwitter,FaInstagram} from 'react-icons/fa';
 
 const javaScriptTech = require("../../../assets/img/tech/javascript.png");
 const reactTech = require("../../../assets/img/tech/react.png");

@@ -3,6 +3,7 @@ import IntroView from './introView/introView';
 import AboutView from './aboutView/aboutView';
 import TechView from './techView/techView';
 import WorkView from './workView/workView';
+import ContactView from './contactView/contactView';
 import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
@@ -34,6 +35,7 @@ function HomeView(props){
             <AboutView />
             <TechView />
             <WorkView />
+            <ContactView />
         </StateProvider>
     );
 }
@@ -41,12 +43,13 @@ function HomeView(props){
 export const SectionContainer = props =>{
     const classHeader = 'title-container-body ' + (props.classHeader?props.classHeader:'');
     const backgroundColor = props.backgroundColor?'#'+props.backgroundColor:'#17252A';
+    const classBody = 'rest-container-body ' + (props.classBody?props.classBody:'');
     return(
         <section id={props.id} className={'section-container'} style={{background:backgroundColor}}>
             <div className={classHeader}>
                 <span>{props.title}</span>
             </div>
-            <div className={'rest-container-body'} style={props.style}>
+            <div className={classBody} style={props.style}>
                 {props.children}
             </div>
         </section>

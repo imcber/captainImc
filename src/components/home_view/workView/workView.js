@@ -125,9 +125,9 @@ const ListSitesSection = props => {
     useEffect(() => {
         let thisRefListSite = listSitesRef;
         setTimeout(() =>{
-            thisRefListSite.current.style.animation = 'navigation-sites 300ms linear';
+            thisRefListSite.current.style.animation = 'navigation-sites 250ms linear';
             thisRefListSite.current.style.opacity = '1';
-        },300);
+        },250);
         return(() => {
             thisRefListSite.current.style.animation = '';
         });
