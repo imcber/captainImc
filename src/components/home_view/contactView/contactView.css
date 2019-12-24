@@ -24,6 +24,7 @@
     font-size: 3em;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    padding: 1em 0 0 0;
 }
 
 .list-social{
@@ -37,4 +38,9 @@
 .social-item{
     margin: 0 0 0 2em;
     cursor: pointer;
+    transition: all 250ms linear;
+}
+
+.social-item:hover{
+    color: #a2f9f4 !important;
 }

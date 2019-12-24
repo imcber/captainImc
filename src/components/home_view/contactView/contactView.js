@@ -6,12 +6,12 @@ import {FaHome,FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin}
 import { IconContext } from "react-icons";
 
 const socialList = [
-    {icon:<FaFacebookF/>,href:''},
-    {icon:<FaTwitter/>,href:''},
-    {icon:<FaInstagram/>,href:''},
-    {icon:<FaGithub/>,href:''},
-    {icon:<FaDribbble/>,href:''},
-    {icon:<FaLinkedin/>,href:''},
+    {icon:<FaFacebookF/>,href:'',name:'facebook'},
+    {icon:<FaTwitter/>,href:'',name:'twitter'},
+    {icon:<FaInstagram/>,href:'',name:'instagram'},
+    {icon:<FaGithub/>,href:'',name:'github'},
+    {icon:<FaDribbble/>,href:'',name:'dibbble'},
+    {icon:<FaLinkedin/>,href:'',name:'linkedin'},
 ];
 //INIT COMPONENT
 const ContactView = () =>{
@@ -27,6 +27,9 @@ const ContactView = () =>{
 export default ContactView;
 
 const ContactContent = () =>{
+    //GET DATA JSON
+    const getDataLeg = useStateData();
+    //EACH ITEM OF SOCIAL ICON
     const SocialItem = props =>{
         const thisItem = props.item;
         return(
@@ -40,11 +43,11 @@ const ContactContent = () =>{
     return(
         <div className={'body-container-contact'}>
             <div className={'question-section'}>
-                <span>¿Tienes preguntas? ó ¿Quieres contactarme?</span>
+                <span>{getDataLeg('lg.menu.contact.quest')}</span>
             </div>
             <div>
                 <ul className={'list-social'}>
-                    {socialList.map(item=><SocialItem item={item}/>)}
+                    {socialList.map(item=><SocialItem item={item} key={item.name}/>)}
                 </ul>
             </div>
             <div>

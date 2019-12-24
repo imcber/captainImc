@@ -1,5 +1,4 @@
 {
-    
     "es":{
         "header":{"title":"Capitan Imc","degree":"FULL STACK DEVELOPER"},
         "menu":{
@@ -43,7 +42,8 @@
                 },
                 "go":"IR"
             },"contact":{
-                "title":"Contacto"
+                "title":"Contacto",
+                "quest":"¿Tienes preguntas? ó ¿Quieres contactarme?"
             }
         }
     },
@@ -90,7 +90,8 @@
                 },
                 "go":"GO"
             },"contact":{
-                "title":"Contact"
+                "title":"Contact",
+                "quest":"Got questions? or Want to contact me?"
             }
         }
     }

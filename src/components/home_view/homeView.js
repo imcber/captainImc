@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import IntroView from './introView/introView';
 import AboutView from './aboutView/aboutView';
 import TechView from './techView/techView';
@@ -29,14 +29,32 @@ const reducer = (state,action) => {
 };
 
 function HomeView(props){
+    const [loading,setLoading] = useState(true);
+    useEffect(()=>{
+        setLoading(false);
+      return(() =>{
+          setLoading(true);
+      });  
+    });
     return(
-        <StateProvider initialState={initialState} reducer={reducer}>
-            <IntroView />
-            <AboutView />
-            <TechView />
-            <WorkView />
-            <ContactView />
-        </StateProvider>
+        <>
+            {!loading ? 
+            <StateProvider initialState={initialState} reducer={reducer}>
+                <IntroView />
+                <AboutView />
+                <TechView />
+                <WorkView />
+                <ContactView />
+            </StateProvider>:
+            <LoaderSection />
+            }
+        </>
+    );
+}
+
+const LoaderSection = () =>{
+    return(
+        <div>loading</div>
     );
 }
 
