@@ -11,3 +11,8 @@
 .rest-container-body{
     height: 90%;
 }
+
+.loader-page{
+    height: 100vh;
+    background: #000000;
+}

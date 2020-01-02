@@ -39,14 +39,14 @@ function HomeView(props){
     return(
         <>
             {!loading ? 
-            <StateProvider initialState={initialState} reducer={reducer}>
-                <IntroView />
-                <AboutView />
-                <TechView />
-                <WorkView />
-                <ContactView />
-            </StateProvider>:
-            <LoaderSection />
+                <StateProvider initialState={initialState} reducer={reducer}>
+                    <IntroView />
+                    <AboutView />
+                    <TechView />
+                    <WorkView />
+                    <ContactView />
+                </StateProvider>:
+                <LoaderSection />
             }
         </>
     );
@@ -54,7 +54,7 @@ function HomeView(props){
 
 const LoaderSection = () =>{
     return(
-        <div>loading</div>
+        <div className={'loader-page'}></div>
     );
 }
 

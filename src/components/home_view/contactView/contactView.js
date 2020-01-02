@@ -6,12 +6,12 @@ import {FaHome,FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin}
 import { IconContext } from "react-icons";
 
 const socialList = [
-    {icon:<FaFacebookF/>,href:'',name:'facebook'},
-    {icon:<FaTwitter/>,href:'',name:'twitter'},
-    {icon:<FaInstagram/>,href:'',name:'instagram'},
-    {icon:<FaGithub/>,href:'',name:'github'},
-    {icon:<FaDribbble/>,href:'',name:'dibbble'},
-    {icon:<FaLinkedin/>,href:'',name:'linkedin'},
+    {icon:<FaFacebookF/>,href:'https://www.facebook.com/imcber1',name:'facebook'},
+    {icon:<FaTwitter/>,href:'https://twitter.com/CaptainImcber',name:'twitter'},
+    {icon:<FaInstagram/>,href:'https://www.instagram.com/imcber1',name:'instagram'},
+    {icon:<FaGithub/>,href:'https://github.com/imcber',name:'github'},
+    {icon:<FaDribbble/>,href:'https://dribbble.com/IMCDEV',name:'dribbble'},
+    {icon:<FaLinkedin/>,href:'www.linkedin.com/in/imcber',name:'linkedin'},
 ];
 //INIT COMPONENT
 const ContactView = () =>{
@@ -32,8 +32,11 @@ const ContactContent = () =>{
     //EACH ITEM OF SOCIAL ICON
     const SocialItem = props =>{
         const thisItem = props.item;
+        const handlerClick = () =>{
+            window.open(thisItem.href,'_blank');
+        }
         return(
-            <li>
+            <li onClick={handlerClick}>
                 <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'social-item'}}>
                     {thisItem.icon}
                 </IconContext.Provider>

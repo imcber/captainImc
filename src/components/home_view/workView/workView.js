@@ -210,7 +210,7 @@ const getListPagination = (listOriginal,numInd) => {
     Object.keys(listOriginal).map((item) => {
         if(indx > numInd){
             listResponse.push(listAuxTemp);
-            listAuxTemp = new Array();
+            listAuxTemp = [];
             indx = 1;
         }
         listOriginal[item].img = listDataSites[item.toLowerCase()].img;

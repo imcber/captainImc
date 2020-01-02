@@ -12,7 +12,6 @@ const cssTech = require("../../../assets/img/tech/css.png");
 const pythonTech = require("../../../assets/img/tech/python.png");
 const javaTech = require("../../../assets/img/tech/java.png");
 const csharpTech = require("../../../assets/img/tech/csharp.png");
-const unityTech = require("../../../assets/img/tech/unity.png");
 
 //INIT VIEW ABOUT
 const TechView = () =>{
@@ -79,7 +78,7 @@ const TechList = (props) =>{
         }
         return(
             <div className={'tech-item'}>
-                <img src={thisItem.icon} onClick={thisHandlerClick} style={styleSelect}></img>
+                <img src={thisItem.icon} onClick={thisHandlerClick} style={styleSelect} alt={thisItem.name}></img>
             </div>
         );
     }
