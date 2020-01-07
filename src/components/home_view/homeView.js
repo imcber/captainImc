@@ -28,33 +28,45 @@ const reducer = (state,action) => {
     }
 };
 
-function HomeView(props){
+const HomeView = () => {
     const [loading,setLoading] = useState(true);
     useEffect(()=>{
-        setLoading(false);
+        setTimeout(()=>{
+            setLoading(false);
+        },1000);
       return(() =>{
           setLoading(true);
       });  
-    });
+    },loading);
+
+    const PageContent = () => {
+        return(
+            <>
+                <IntroView />
+                <AboutView />
+                <TechView />
+                <WorkView />
+                <ContactView />
+            </>
+        );
+    };
+
     return(
         <>
-            {!loading ? 
-                <StateProvider initialState={initialState} reducer={reducer}>
-                    <IntroView />
-                    <AboutView />
-                    <TechView />
-                    <WorkView />
-                    <ContactView />
-                </StateProvider>:
-                <LoaderSection />
-            }
+            <StateProvider initialState={initialState} reducer={reducer}>
+                {loading ? <LoaderSection/>:<PageContent/>}
+            </StateProvider>
         </>
     );
 }
 
 const LoaderSection = () =>{
     return(
-        <div className={'loader-page'}></div>
+        <div className={'loader-page'}>
+            <span>
+                LOADING!
+            </span>
+        </div>
     );
 }
 

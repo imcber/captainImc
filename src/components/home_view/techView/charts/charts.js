@@ -20,7 +20,7 @@ export const CircleChart = (props) =>{
         return(() => {
             thisChart.current.style.animation = ''; 
         });
-    });
+    },[refChart]);
     return(
         <div className={'single-chart'}>
             <svg viewBox='0 0 36 46' className='circular-chart'>
