@@ -65,12 +65,14 @@ function HeaderIntro(props){
     //item to switch language
     const LanguageItem = (props) =>{
         const indLang = dataText.lgActual !== props.nameLang;
+        const offLoader = dataText.offLoader;
         //funtion click switch language
         const switchLanguage = () =>{
             handlerlanguage({
                     type : 'changeLanguage',
                     newLanguage : props.nameLang
             });
+            offLoader();
         };
         return(
             <span onClick={indLang?switchLanguage:()=>{}} style={!indLang?{color:'#DEF2F1'}:{}}>

@@ -8,7 +8,7 @@ import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
 
-const initialState = { 
+var initialState = { 
     lg : dl['es'],/*LENGUAGE*/
     lgKeys : Object.keys(dl),
     lgActual : 'es'
@@ -29,23 +29,24 @@ const reducer = (state,action) => {
 };
 
 function HomeView(props){
-    //REF LOADER
-    const refLoader = useRef(null);
     //SHOW THE LOADER PAGE
     const [loading,setLoading] = useState(true);
+
+    const offLoader = () =>{
+        setLoading(true);
+    }
+    initialState.offLoader = offLoader;
     useEffect(()=>{
-        let thisRefLoader=refLoader.current;
-        setTimeout(()=>{
-            thisRefLoader.className = 'loader-page container-hide';
+        setTimeout(() => {
+            setLoading(false);
         },1000);
       return(() =>{
-        refLoader.current.className = 'loader-page';
       });  
-    });
+    },[loading]);
 
     const LoaderSection = () =>{
         return(
-            <div className={'loader-page'} ref={refLoader}>
+            <div className={'loader-page'}>
                 <span>LOADING!</span>
             </div>
         );
@@ -65,10 +66,9 @@ function HomeView(props){
 
     return(
         <>
-            <StateProvider initialState={initialState} reducer={reducer}>
-                <LoaderSection />
-                <ContainerPage/>
-            </StateProvider>
+                <StateProvider initialState={initialState} reducer={reducer}>
+                    {loading?<LoaderSection/>:<ContainerPage/>}
+                </StateProvider>
         </>
     );
 }
