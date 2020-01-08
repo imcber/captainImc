@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import IntroView from './introView/introView';
 import AboutView from './aboutView/aboutView';
 import TechView from './techView/techView';
@@ -28,18 +28,30 @@ const reducer = (state,action) => {
     }
 };
 
-const HomeView = () => {
+function HomeView(props){
+    //REF LOADER
+    const refLoader = useRef(null);
+    //SHOW THE LOADER PAGE
     const [loading,setLoading] = useState(true);
     useEffect(()=>{
+        let thisRefLoader=refLoader.current;
         setTimeout(()=>{
-            setLoading(false);
+            thisRefLoader.className = 'loader-page container-hide';
         },1000);
       return(() =>{
-          setLoading(true);
+        refLoader.current.className = 'loader-page';
       });  
-    },loading);
+    });
 
-    const PageContent = () => {
+    const LoaderSection = () =>{
+        return(
+            <div className={'loader-page'} ref={refLoader}>
+                <span>LOADING!</span>
+            </div>
+        );
+    }
+
+    const ContainerPage = () =>{
         return(
             <>
                 <IntroView />
@@ -54,19 +66,10 @@ const HomeView = () => {
     return(
         <>
             <StateProvider initialState={initialState} reducer={reducer}>
-                {loading ? <LoaderSection/>:<PageContent/>}
+                <LoaderSection />
+                <ContainerPage/>
             </StateProvider>
         </>
-    );
-}
-
-const LoaderSection = () =>{
-    return(
-        <div className={'loader-page'}>
-            <span>
-                LOADING!
-            </span>
-        </div>
     );
 }
 

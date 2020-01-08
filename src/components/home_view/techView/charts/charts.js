@@ -1,11 +1,17 @@
 import React,{useRef,useEffect} from 'react';
 import './charts.css';
 
+//EACH CIRCLE TO DISPLAY
 export const CircleChart = (props) =>{
+    //ACTUAL ITEM
     const thisItem = props.item;
+    //TEXT RANGE TO DISPLAY
     const textRange = thisItem.type === "NAT"?(parseFloat(thisItem.range)/10):thisItem.range;
+    //NAME OF CHART
     const text = thisItem.text;
+    //REF OF CHART
     const refChart = useRef(null);
+    //COLOR OF THE STROKE
     const listColorsStroke = [
         {offset:'0',color:'2AF598'},
         {offset:'100',color:'08AEEA'},
@@ -14,13 +20,15 @@ export const CircleChart = (props) =>{
     useEffect(() => {
         let thisChart = refChart;
         setTimeout(()=>{
+            //SET ANIMATION
             thisChart.current.style.animation = 'progress 1s ease-out forwards';
+            //SET RANGE 0 - 100
             thisChart.current.style.strokeDasharray = thisItem.range +', 100';
         },200);
         return(() => {
             thisChart.current.style.animation = ''; 
         });
-    },[refChart]);
+    });
     return(
         <div className={'single-chart'}>
             <svg viewBox='0 0 36 46' className='circular-chart'>
@@ -45,8 +53,11 @@ export const CircleChart = (props) =>{
 };
 
 const PathSvg = (props) => {
+    //ID OF THE STROKE TO DISPLAY
     const idStroke = props.strokeId?props.strokeId:'';
+    //REF OF DOM
     const refDom = props.refDom?props.refDom:null;
+    //RANGE TO DISPLAY 0 - 100
     const strokeDasharray = props.strokeDasharray?props.strokeDasharray:'';
     return(
         <path className={props.class} d={props.d} stroke={idStroke} strokeDasharray={strokeDasharray} ref={refDom}/>
