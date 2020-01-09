@@ -2,7 +2,7 @@ import React from 'react';
 import './contactView.css';
 import {SectionContainer} from '../homeView';
 import {useStateData} from '../../utils/state';
-import {FaHome,FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin} from 'react-icons/fa';
+import {FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 const socialList = [
