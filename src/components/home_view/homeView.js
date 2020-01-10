@@ -8,6 +8,7 @@ import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
 import {GiSpaceShuttle} from 'react-icons/gi';
+import {FaLongArrowAltUp} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
 var initialState = { 
@@ -57,6 +58,7 @@ function HomeView(props){
     const ContainerPage = () =>{
         return(
             <>
+                <TopButton />
                 <IntroView />
                 <AboutView />
                 <TechView />
@@ -68,7 +70,6 @@ function HomeView(props){
 
     return(
         <>
-            <TopButton />
             <StateProvider initialState={initialState} reducer={reducer}>
                 {loading?<LoaderSection/>:<ContainerPage/>}
             </StateProvider>
@@ -83,11 +84,11 @@ const TopButton = () =>{
     }
     return(
         <div className={'nav-bar-fixed'}>
-            <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
-                <span>
-                    <GiSpaceShuttle onClick={handlerClick}/>
-                </span>
-            </IconContext.Provider>
+            <div className={'back-top-container'}>
+                <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
+                    <FaLongArrowAltUp onClick={handlerClick}/>
+                </IconContext.Provider>
+            </div>
         </div>
     );
 };
