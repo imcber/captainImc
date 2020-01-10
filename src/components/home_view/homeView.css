@@ -44,8 +44,18 @@
     margin: 4em 2em 0 0;
     cursor: pointer;
     transition: all 200ms linear;
+    animation: appears 300ms linear;
 }
 
 .back-top-icon:hover{
     color: #DEF2F1 !important;
 }
+
+@keyframes appears {
+    0% {
+      color: #DEF2F1;
+    }
+    100% {
+        color: #3AAFA9;
+    }
+  }

@@ -7,9 +7,10 @@ import ContactView from './contactView/contactView';
 import './homeView.css';
 import dl from '../../assets/dataContent/dataLanguages.json'
 import {StateProvider} from '../utils/state';
-import {GiSpaceShuttle} from 'react-icons/gi';
 import {FaLongArrowAltUp} from 'react-icons/fa';
 import { IconContext } from "react-icons";
+import { useScroll } from "../utils/useScroll";
+import {useStateData} from '../utils/state';
 
 var initialState = { 
     lg : dl['es'],/*LENGUAGE*/
@@ -38,6 +39,7 @@ function HomeView(props){
     const offLoader = () =>{
         setLoading(true);
     }
+    initialState.offsetTopAbout = 0;
     initialState.offLoader = offLoader;
     useEffect(()=>{
         setTimeout(() => {
@@ -79,17 +81,41 @@ function HomeView(props){
 
 
 const TopButton = () =>{
+    const getDataLeg = useStateData();
+    const [visibleBackTop,setVisibleBackTop] = useState(false);
+    //HOOK OF SCROLL
+    const { scrollY } = useScroll();
+    
+    useEffect(() => {
+        const offSetAbout = getDataLeg('').offsetTopAbout;
+        const offComp = offSetAbout * .1;
+        if(scrollY > offSetAbout - offComp){
+            setVisibleBackTop(true);
+        }else{
+            setVisibleBackTop(false);
+        }
+    });
+
+    //HANDLER CLICK TOP BUTTON
     const handlerClick = () =>{
         document.documentElement.scrollTop = 0;
     }
+
+    const Buttontop = () =>{
+        return(
+            <div className={'nav-bar-fixed'}>
+                <div className={'back-top-container'}>
+                    <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
+                        <FaLongArrowAltUp onClick={handlerClick}/>
+                    </IconContext.Provider>
+                </div>
+            </div> 
+        );
+    }
     return(
-        <div className={'nav-bar-fixed'}>
-            <div className={'back-top-container'}>
-                <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
-                    <FaLongArrowAltUp onClick={handlerClick}/>
-                </IconContext.Provider>
-            </div>
-        </div>
+        <>
+            {visibleBackTop?<Buttontop/>:<></>}
+        </>
     );
 };
 

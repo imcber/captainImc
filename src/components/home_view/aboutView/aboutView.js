@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef,useEffect} from 'react';
 import './aboutView.css'
 import {useStateData} from '../../utils/state';
 import {SectionContainer} from '../homeView';
@@ -7,10 +7,19 @@ import {SectionContainer} from '../homeView';
 const AboutView = () =>{
     //GET DATA TO THE TEXT
     const getDataLeg = useStateData();
+
+    const divAbout = useRef(null);
+
+    useEffect(() => {
+        getDataLeg('').offsetTopAbout = divAbout.current.offsetTop;
+    },[]);
+
     return(
-        <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')} style={{display:'flex'}} backgroundColor={'DEF2F1'}>
-            <AboutContent />
-        </SectionContainer>
+        <div ref={divAbout}>  
+            <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')} style={{display:'flex'}} backgroundColor={'DEF2F1'}>
+                <AboutContent />
+            </SectionContainer>
+        </div>
     );
 }
 
@@ -18,6 +27,8 @@ const AboutView = () =>{
 const AboutContent = () =>{
     //GET DATA OF THE JSON
     const getDataLeg = useStateData();
+
+    
 
     // SUMMARY OF TH VIEW
     const TitleSummaryContainer = (props) => {
