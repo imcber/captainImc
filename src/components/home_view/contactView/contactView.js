@@ -5,7 +5,7 @@ import {useStateData} from '../../utils/state';
 import {FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
-const contactIllus = require('../../../assets/img/flame-8.png');
+const contactIllus = require('../../../assets/img/flame-no-comments.png');
 
 const socialList = [
     {icon:<FaFacebookF/>,href:'https://www.facebook.com/imcber1',name:'facebook'},
@@ -50,13 +50,16 @@ const ContactContent = () =>{
             <div className={'question-section'}>
                 <span>{getDataLeg('lg.menu.contact.quest')}</span>
             </div>
-            <div>
+            <div style={{height:'20%'}}>
                 <ul className={'list-social'}>
                     {socialList.map(item=><SocialItem item={item} key={item.name}/>)}
                 </ul>
             </div>
-            <div>
-                <img src={contactIllus} />
+            <div style={{height:'50%'}}>
+                <img style={{height:'99%',float:'right'}} src={contactIllus} />
+            </div>
+            <div style={{height:'10%'}}>
+                
             </div>
         </div>
     );
