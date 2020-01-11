@@ -5,7 +5,7 @@ import {useStateValue,useStateData} from '../../utils/state';
 
 
 //IMG INSIDE INTRO VIEW
-const mainImg = require('../../../assets/img/mushroom.png');
+const mainImg = require('../../../assets/img/flame-camera-access.png');
 
 //INIT VIEW ABOUT
 const IntroView = () => {

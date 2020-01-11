@@ -5,6 +5,8 @@ import {useStateData} from '../../utils/state';
 import {FaFacebookF,FaTwitter,FaInstagram,FaGithub,FaDribbble,FaLinkedin} from 'react-icons/fa';
 import { IconContext } from "react-icons";
 
+const contactIllus = require('../../../assets/img/flame-8.png');
+
 const socialList = [
     {icon:<FaFacebookF/>,href:'https://www.facebook.com/imcber1',name:'facebook'},
     {icon:<FaTwitter/>,href:'https://twitter.com/CaptainImcber',name:'twitter'},
@@ -54,7 +56,7 @@ const ContactContent = () =>{
                 </ul>
             </div>
             <div>
-                ilustracion
+                <img src={contactIllus} />
             </div>
         </div>
     );
