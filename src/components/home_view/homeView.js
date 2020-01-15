@@ -85,19 +85,19 @@ const TopButton = () =>{
     const [visibleBackTop,setVisibleBackTop] = useState(false);
     const offBtnBackTop = () =>{
         const offSetAbout = getDataLeg('').offsetTopAbout;
-        const offComp = offSetAbout * .1;
-        if(scrollY > offSetAbout - offComp){
+        const offComp = offSetAbout * .2;
+        if(scrollY < offSetAbout - offComp){
+            setVisibleBackTop(false);
+        }else{
             setVisibleBackTop(true);
         }
     }
     //HOOK OF SCROLL
-    const { scrollY } = useScroll(offBtnBackTop);
+    const { scrollY } = useScroll(/*offBtnBackTop*/);
     
     useEffect(() => {
-        return(() => {
-            setVisibleBackTop(false);
-        });
-    },[visibleBackTop]);
+        offBtnBackTop();
+    });
 
     //HANDLER CLICK TOP BUTTON
     const handlerClick = () =>{

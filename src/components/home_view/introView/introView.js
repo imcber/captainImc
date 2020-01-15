@@ -125,7 +125,7 @@ function MenuList(props){
                 {listItemMenu.map((item) => <MenuItem key={item.section} item={item}/>)}
             </div>
             <div className='main-img-container'>
-                <img src={mainImg}/>
+                <img src={mainImg} alt={'intro-img'}/>
             </div>
         </>
     );

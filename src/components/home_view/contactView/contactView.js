@@ -56,7 +56,7 @@ const ContactContent = () =>{
                 </ul>
             </div>
             <div style={{height:'50%'}}>
-                <img style={{height:'99%',float:'right'}} src={contactIllus} />
+                <img style={{height:'99%',float:'right'}} src={contactIllus} alt={"contact-img"} />
             </div>
             <div style={{height:'10%'}}>
                 

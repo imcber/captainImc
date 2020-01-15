@@ -21,7 +21,9 @@ export function useScroll(handlerScroll) {
     setScrollX(bodyOffset.left);
     setScrollDirection(lastScrollTop > -bodyOffset.top ? "down" : "up");
     setLastScrollTop(-bodyOffset.top);
-    handlerScroll();
+    if(handlerScroll){
+      handlerScroll();
+    }
   };
 
   useEffect(() => {
