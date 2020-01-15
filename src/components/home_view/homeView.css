@@ -48,14 +48,14 @@
 }
 
 .back-top-icon:hover{
-    color: #DEF2F1 !important;
+    color: #FDB813 !important;
 }
 
 @keyframes appears {
     0% {
-      color: #DEF2F1;
+      color: #3AAFA9;
     }
     100% {
-        color: #3AAFA9;
+        color: #FDB813;
     }
   }

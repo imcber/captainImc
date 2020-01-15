@@ -83,18 +83,21 @@ function HomeView(props){
 const TopButton = () =>{
     const getDataLeg = useStateData();
     const [visibleBackTop,setVisibleBackTop] = useState(false);
-    //HOOK OF SCROLL
-    const { scrollY } = useScroll();
-    
-    useEffect(() => {
+    const offBtnBackTop = () =>{
         const offSetAbout = getDataLeg('').offsetTopAbout;
         const offComp = offSetAbout * .1;
         if(scrollY > offSetAbout - offComp){
             setVisibleBackTop(true);
-        }else{
-            setVisibleBackTop(false);
         }
-    });
+    }
+    //HOOK OF SCROLL
+    const { scrollY } = useScroll(offBtnBackTop);
+    
+    useEffect(() => {
+        return(() => {
+            setVisibleBackTop(false);
+        });
+    },[visibleBackTop]);
 
     //HANDLER CLICK TOP BUTTON
     const handlerClick = () =>{
