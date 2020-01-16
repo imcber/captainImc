@@ -54,7 +54,7 @@ const FooterIntro = () =>{
     return(
         <>
             <FooterIntro style={{}} text={'CAPTAINIMC.COM'}/>
-            <FooterIntro style={{left: '85%'}} text={'2020'}/>
+            <FooterIntro style={{right: '0'}} text={'2020'}/>
         </>
     );
 }
