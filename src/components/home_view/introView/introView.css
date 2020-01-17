@@ -6,7 +6,7 @@
 }
 
 .menu-item{
-    font-size: 6rem;
+    font-size: 8vw;
     color: #17252A;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
@@ -30,9 +30,8 @@
 
 .menu-container > div{
     padding-left: 35%;
-    height: 19%;
+    height: 25%;
     width: 65%;
-    padding-top: 2%;
 }
 
 .menu-container > div:first-child{
@@ -46,10 +45,13 @@
 .main-img-container{
     height: 100%;
     width: 40%;
+    display: grid;
+    align-content: center;
 }
 
 .main-img-container>img{
-    height: 110%;
+    /*height: 110%;*/
+    width: 100%;
 }
 
 .complement-intro{
