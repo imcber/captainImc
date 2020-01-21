@@ -14,7 +14,7 @@
 }
 
 .title-about-container>span{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color:#17252A;
     font-family: 'Raleway', sans-serif; 
     padding: 8% 0% 0 10%;
@@ -36,11 +36,36 @@
     column-fill: auto;
 }
 
-.title-summary-container>p{
-    font-size: 1em;
-    color:#23383f;
+.title-summary-container>span{
+    font-size: 1.3vw;
+    color:#1d4959;
     font-family: 'Raleway', sans-serif; 
     line-height: 4vh;
     letter-spacing: .05em;
     margin: 0;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .about-body {
+        flex-direction: column;
+    }
+    .title-about-container>span{
+        font-size: 1.3rem;
+        padding: 3% 0 0 0;
+    }
+    .title-summary-container{
+        width: 90%;
+        height: auto;
+        column-count: initial;
+        padding: 3% 5% 0 5%;
+    }
+    .title-about-container{
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+    .title-summary-container > span{
+        font-size: 100%;
+    }
 }

@@ -16,7 +16,7 @@ const AboutView = () =>{
 
     return(
         <div ref={divAbout}>  
-            <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')} style={{display:'flex'}} backgroundColor={'DEF2F1'}>
+            <SectionContainer id={'aboutView'} title={getDataLeg('lg.menu.about.title')} style={{display:'flex'}} backgroundColor={'DEF2F1'} classBody={'about-body'}>
                 <AboutContent />
             </SectionContainer>
         </div>
@@ -27,10 +27,7 @@ const AboutView = () =>{
 const AboutContent = () =>{
     //GET DATA OF THE JSON
     const getDataLeg = useStateData();
-
-    
-
-    // SUMMARY OF TH VIEW
+    // SUMMARY OF THE VIEW
     const TitleSummaryContainer = (props) => {
         return(
             <div className={'title-summary-container'}>
@@ -38,6 +35,7 @@ const AboutContent = () =>{
             </div>
         );
     };
+    const textSummary = getDataLeg('lg.menu.about.summary');
 
     return(
         <>
@@ -45,10 +43,7 @@ const AboutContent = () =>{
                 <span>{getDataLeg('lg.menu.about.titleView')}</span>
             </div>
             <TitleSummaryContainer >
-                <p>{getDataLeg('lg.menu.about.summary-me')}</p>
-                <p>{getDataLeg('lg.menu.about.summary-work')}</p>
-                <p>{getDataLeg('lg.menu.about.summary-second')}</p>
-                <p>{getDataLeg('lg.menu.about.summary-myjob')}</p>
+                <span>{textSummary}</span>
             </TitleSummaryContainer>
         </>
     );
