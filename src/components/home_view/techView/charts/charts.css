@@ -44,3 +44,9 @@
   font-size: 0.2em;
   text-anchor: middle;
 }
+
+@media (max-width: 800px) {
+  .single-chart{
+      width: 100%;
+  }
+}

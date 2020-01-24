@@ -1,5 +1,5 @@
 .title-container-body>span{
-    font-size: 2rem;
+    font-size: 2.5vw;
     color:#17252A;
     font-family: 'Poppins', sans-serif;
 }
@@ -14,7 +14,7 @@
 }
 
 .text-title-about{
-    font-size: 2.5rem;
+    font-size: 3vw;
     color:#17252A;
     font-family: 'Raleway', sans-serif; 
     padding: 8% 0% 0 10%;
@@ -24,7 +24,6 @@
 
 .title-summary-container{
     height: 80%;
-    width: 60%;
     text-align: left;
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -50,6 +49,14 @@
     height: 70%;
 }
 
+.download-sum{
+    float: right;
+    margin: -10% 10% 0 0;
+}
+
+.col-summ-1{
+    width: 60%;
+}
 @media (max-width: 800px) {
     .about-body {
         flex-direction: column;
@@ -60,14 +67,14 @@
     }
     .title-summary-container{
         width: 90%;
-        height: 80%;
+        height: 100%;
         column-count: initial;
         padding: 3% 5% 0 5%;
         display: grid;
     }
     .title-about-container{
         width: 100%;
-        height: 20%;
+        height: 10%;
         align-items: center;
     }
     .title-summary-container > span{
@@ -82,5 +89,13 @@
     .title-container-about{
         display: grid;
         align-content: center;
+        justify-content: center;
+    }
+    .col-summ-1{
+        width: 100%;
+        height: 100%;
+    }
+    .title-container-body>span{
+        font-size: 5vw;
     }
 }

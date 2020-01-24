@@ -33,8 +33,11 @@ const AboutContent = () =>{
     // SUMMARY OF THE VIEW
     const TitleSummaryContainer = (props) => {
         return(
-            <div className={'title-summary-container'}>
-                {props.children}
+            <div className={'col-summ-1'}>
+                <div className={'title-summary-container'}>
+                    {props.children}
+                </div>
+                <span className={'download-sum'}>{getDataLeg('lg.menu.about.download')}</span>
             </div>
         );
     };
@@ -47,7 +50,7 @@ const AboutContent = () =>{
                     <span className={'text-title-about'}>{getDataLeg('lg.menu.about.titleView')}</span>
                 </div>
                 <div className={'img-summary'}>
-                    <img style={{height:'100%'}} src={sum_img}></img>
+                    <img style={{height:'80%', margin:'10% 0 0 0'}} src={sum_img}></img>
                 </div>
             </div>
             <TitleSummaryContainer >

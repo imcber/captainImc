@@ -5,8 +5,9 @@
             "about":{
                 "title":"Acerca",
                 "titleView":"Soy Ekatl, Fullstack developer de Mexico viviendo en Querétaro",
-                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio UX y UI. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas."
-            },"tech":{
+                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio UX y UI. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas.",
+                "download":"Descarga mi CV para saber mas..."
+                },"tech":{
                 "title":"Tech",
                 "charts":{
                     "exp":"Experiencia",
@@ -50,7 +51,8 @@
             "about":{
                 "title":"About",
                 "titleView":"I am Ekatl, Fullstack developer from Mexico living in Querétaro",
-                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio UX y UI. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas."
+                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio UX y UI. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas.",
+                "download":"Descarga mi CV para saber mas..."
                 },"tech":{
                 "title":"Tech",
                 "charts":{
