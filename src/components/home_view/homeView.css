@@ -24,13 +24,9 @@
 }
 
 .nav-bar-fixed{
-    background: #ffffff00;
-    width: 100%;
-    height: auto;
     position: fixed;
     z-index: 5;
-    display: flex;
-    justify-content: end;
+    right: 0;
 }
 
 .back-top-container{

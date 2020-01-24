@@ -3,6 +3,9 @@ import './aboutView.css'
 import {useStateData} from '../../utils/state';
 import {SectionContainer} from '../homeView';
 
+const sum_img = require("../../../assets/img/open-doodles-zombieing.png");
+
+
 //INIT VIEW ABOUT
 const AboutView = () =>{
     //GET DATA TO THE TEXT
@@ -40,7 +43,12 @@ const AboutContent = () =>{
     return(
         <>
             <div className={'title-about-container'}>
-                <span>{getDataLeg('lg.menu.about.titleView')}</span>
+                <div className={'title-container-about'}>
+                    <span className={'text-title-about'}>{getDataLeg('lg.menu.about.titleView')}</span>
+                </div>
+                <div className={'img-summary'}>
+                    <img style={{height:'100%'}} src={sum_img}></img>
+                </div>
             </div>
             <TitleSummaryContainer >
                 <span>{textSummary}</span>

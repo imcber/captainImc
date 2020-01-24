@@ -13,7 +13,7 @@
     flex-direction: column;
 }
 
-.title-about-container>span{
+.text-title-about{
     font-size: 2.5rem;
     color:#17252A;
     font-family: 'Raleway', sans-serif; 
@@ -46,26 +46,41 @@
     font-weight: 600;
 }
 
+.img-summary{
+    height: 70%;
+}
+
 @media (max-width: 800px) {
     .about-body {
         flex-direction: column;
     }
-    .title-about-container>span{
+    .text-title-about{
         font-size: 1.3rem;
         padding: 3% 0 0 0;
     }
     .title-summary-container{
         width: 90%;
-        height: auto;
+        height: 80%;
         column-count: initial;
         padding: 3% 5% 0 5%;
+        display: grid;
     }
     .title-about-container{
         width: 100%;
-        height: auto;
+        height: 20%;
         align-items: center;
     }
     .title-summary-container > span{
         font-size: 100%;
+        white-space: break-spaces;
+        height: 100%;
+        overflow: auto;
+    }
+    .img-summary{
+        display: none;
+    }
+    .title-container-about{
+        display: grid;
+        align-content: center;
     }
 }
