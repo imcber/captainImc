@@ -39,7 +39,7 @@ const ContactContent = () =>{
         }
         return(
             <li onClick={handlerClick}>
-                <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'social-item'}}>
+                <IconContext.Provider value={{color:'#3AAFA9',size:'4vw',className:'social-item'}}>
                     {thisItem.icon}
                 </IconContext.Provider>
             </li>
@@ -57,9 +57,6 @@ const ContactContent = () =>{
             </div>
             <div style={{height:'50%'}}>
                 <img style={{height:'99%',float:'right'}} src={contactIllus} alt={"contact-img"} />
-            </div>
-            <div style={{height:'10%'}}>
-                
             </div>
         </div>
     );

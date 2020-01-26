@@ -16,28 +16,39 @@
 
 .question-section{
     color: #3AAFA9;
-    width:'100%';
+    width: 100%;
     display: grid;
     justify-content: center;
-    font-size: 3em;
+    font-size: 4vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    padding: 1em 0 0 0;
-    height: 60%;
+    padding: 5% 0 0 0;
+    height: 25%;
 }
 
 .list-social{
     list-style: none;
     display: flex;
     justify-content: center;
+    padding: 0;
 }
 
 .social-item{
-    margin: 0 0 0 2em;
+    margin: 0 0 0 1em;
     cursor: pointer;
     transition: all 250ms linear;
 }
 
 .social-item:hover{
     color: #FDB813 !important;
+}
+
+@media (max-width: 800px) {
+    .question-section{
+        font-size: 8vw;
+    }
+    .social-item{
+       height: 8vw;
+       margin: 0 20px 0 20px;
+    }
 }

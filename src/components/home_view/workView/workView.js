@@ -45,7 +45,7 @@ const WorkView = () =>{
     };
     
     return(
-        <SectionContainer id={'workView'} title={getDataLeg('lg.menu.work.title')} style={{display:'flex'}} classHeader={'header-work-section'}>
+        <SectionContainer id={'workView'} title={getDataLeg('lg.menu.work.title')} style={{display:'flex'}} classHeader={'header-work-section'} classBody={'body-work-section'}>
             <WorkContent actualWorkDisp={actualWorkDisp}/>
             <ListSitesSection listPagination={listPagination} numList={numListDisplay} handlerClick={handlerClick}/>
         </SectionContainer>
@@ -134,7 +134,7 @@ const ListSitesSection = props => {
     },[numList]);
 
     return(
-        <div style={{width:'35%'}}>
+        <div className={'carou-work'}>
             <div className={'list-site-section'}>
                 {listPagination.length > 1 && <NavigationButton direction={'prev'}/>}
                 {listPagination.length > 1 && <NavigationButton direction={'next'} style={{right:'0'}}/>}
@@ -159,10 +159,9 @@ const WorkContent = props =>{
         const actualSite = actualWorkDisp;
         //CONTAINER OF EACH ITEM OF BIG VIEW
         const ContainerInView = props =>{
-            const objStyle = props.style;
-            objStyle.width = '100%';
+            const objClass = props.class;
             return(
-                <div style={objStyle}>
+                <div className={objClass}>
                     {props.children}
                 </div>
             );
@@ -174,17 +173,17 @@ const WorkContent = props =>{
 
         return(
             <div className={'big-view-site'}>
-                <ContainerInView style={{height:'59%',padding:'3% 0 3% 0'}}>
+                <ContainerInView class={'img-big-work'}>
                     <img src={actualSite.img} alt={actualSite.name} className="img-display"></img>
                 </ContainerInView>
-                <ContainerInView style={{height:'10%'}}>
+                <ContainerInView  class={'cntr-big-view-title'}>
                     <div style={{width:'100%',height:'100%',display:'flex'}}>
                         <div className={'big-view-title'}>        
                                 <span>{actualSite.name}</span>
                         </div>
                     </div>
                 </ContainerInView>
-                <ContainerInView style={{height:'25%'}}>
+                <ContainerInView class={'container-btn-go'}>
                     <div className={'big-view-desc-container'}>
                         <span className={'big-view-desc'}>{actualSite.desc}</span>
                         <button className='btn-explore' onClick={goSite}>{getDataLeg('lg.menu.work.go')}</button>

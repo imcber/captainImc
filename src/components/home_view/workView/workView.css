@@ -129,6 +129,23 @@
     white-space: nowrap;
 }
 
+.img-big-work{
+    height:59%;
+    padding:3% 0 3% 0;
+}
+
+.cntr-big-view-title{
+    height:10%;
+}
+
+.container-btn-go{
+    height: 25%;
+}
+
+.carou-work{
+    width: 35%;
+}
+
 @keyframes navigation-sites {
     0% {
        opacity: 0;
@@ -137,3 +154,24 @@
        opacity: 1;
     }
  } 
+
+ @media (max-width: 800px) {
+    .body-work-section{
+        flex-direction: column;
+    }
+    .img-big-work{
+        display: none;
+    }
+    .big-view-site{
+        width: 100%;
+        height: 35%;
+    }
+    .carou-work{
+        width: 100%;
+        height: 55%;
+    }
+    .single-chart{
+        padding: 0;
+        height: 50%;
+    }
+}
