@@ -78,11 +78,11 @@ const ListSitesSection = props => {
 
         return(
             <div className={'card-site'} style={{height:heightDina}} onClick={clickFunction}>
-                <div style={{height:'auto', cursor:'pointer'}}>
-                    <div>
+                <div style={{height:'100%', cursor:'pointer'}}>
+                    <div style={{height:'20%'}}>
                         <span className={'title-card'}>{thisItem.name}</span>
                     </div>
-                    <div style={{display:'flex'}}>
+                    <div style={{display:'flex',height:'80%'}}>
                         <div style={{display:'grid',width:'63%',alignItems:'center'}}>
                             <span className='summary-card'>{thisItem.desc}</span>
                         </div>

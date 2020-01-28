@@ -55,8 +55,8 @@ const ContactContent = () =>{
                     {socialList.map(item=><SocialItem item={item} key={item.name}/>)}
                 </ul>
             </div>
-            <div style={{height:'50%'}}>
-                <img style={{height:'99%',float:'right'}} src={contactIllus} alt={"contact-img"} />
+            <div className={'img-contact-container'}>
+                <img className={'img-contact'} src={contactIllus} alt={"contact-img"} />
             </div>
         </div>
     );

@@ -7,8 +7,8 @@
   }
   
 .circular-chart {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
   fill: #DEF2F1;
 }
 
@@ -45,7 +45,7 @@
   text-anchor: middle;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .single-chart{
       width: 100%;
   }

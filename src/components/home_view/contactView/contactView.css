@@ -22,8 +22,8 @@
     font-size: 4vw;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    padding: 5% 0 0 0;
-    height: 25%;
+    padding: 3% 0 3% 0;
+    height: 24%;
 }
 
 .list-social{
@@ -43,12 +43,28 @@
     color: #FDB813 !important;
 }
 
-@media (max-width: 800px) {
+.img-contact{
+    height:99%;
+    float:right;
+}
+
+.img-contact-container{
+    height: 50%;
+}
+
+@media (max-width: 1200px) {
     .question-section{
-        font-size: 8vw;
+        font-size: 6vw;
     }
     .social-item{
        height: 8vw;
        margin: 0 20px 0 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .img-contact{
+        width: 100%;
+        height: 85%;
     }
 }

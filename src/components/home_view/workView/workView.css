@@ -77,14 +77,15 @@
 
 .navigation-list-button{
     width: 14%;
-    text-align: center;
-    padding-top: 39%;
     position: absolute;
     cursor: pointer;
-    height: 61%;
     color: #ffffff0d;
     transition: all 250ms linear;
     z-index: 2;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation-list-button:hover{
@@ -130,7 +131,7 @@
 }
 
 .img-big-work{
-    height:59%;
+    height:62%;
     padding:3% 0 3% 0;
 }
 
@@ -155,12 +156,18 @@
     }
  } 
 
- @media (max-width: 800px) {
+ @media (max-width: 1200px) {
     .body-work-section{
         flex-direction: column;
     }
     .img-big-work{
         display: none;
+    }
+    .cntr-big-view-title{
+        height:50%;
+    }
+    .container-btn-go{
+        height: 50%;
     }
     .big-view-site{
         width: 100%;
@@ -168,10 +175,22 @@
     }
     .carou-work{
         width: 100%;
-        height: 55%;
+        height: 65%;
     }
     .single-chart{
         padding: 0;
         height: 50%;
+    }
+    .big-view-desc{
+        font-size: 2vw;
+    }
+    .card-site{
+        margin: 1% 3% 0 3%;
+    }
+}
+
+@media (max-width: 450px) {
+    .big-view-desc{
+        font-size: 4vw;
     }
 }
