@@ -112,9 +112,14 @@ function MenuList(props){
    });
 
    const MenuItem = props =>{
+        const goSection = () => {
+            const thisSection = '#'+props.item.section + 'View';
+            document.querySelector(thisSection).scrollIntoView({behavior: 'smooth',block:'start'});
+        };
+
         return(
             <div>
-                <a href={'#'+props.item.section + 'View'} className={'menu-item'}>{props.item.title}</a>
+                <a className={'menu-item'} onClick={goSection}>{props.item.title}</a>
             </div>
         );
     }

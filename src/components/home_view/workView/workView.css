@@ -189,8 +189,8 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .big-view-desc{
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
 }

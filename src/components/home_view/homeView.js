@@ -100,14 +100,15 @@ const TopButton = () =>{
     });
 
     //HANDLER CLICK TOP BUTTON
-    const handlerClick = () =>{
-        document.documentElement.scrollTop = 0;
+    const handlerClick = event =>{
+       // document.documentElement.scrollTop = 0;
+       document.querySelector('.header-intro').scrollIntoView({behavior: 'smooth',block:'start'});
     }
 
     const Buttontop = () =>{
         return(
             <div className={'nav-bar-fixed'}>
-                <div className={'back-top-container'}>
+                <div className={'back-top-container'} >
                     <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
                         <FaLongArrowAltUp onClick={handlerClick}/>
                     </IconContext.Provider>
