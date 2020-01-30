@@ -101,7 +101,6 @@ const TopButton = () =>{
 
     //HANDLER CLICK TOP BUTTON
     const handlerClick = event =>{
-       // document.documentElement.scrollTop = 0;
        document.querySelector('.header-intro').scrollIntoView({behavior: 'smooth',block:'start'});
     }
 
