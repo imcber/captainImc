@@ -52,6 +52,8 @@
 .download-sum{
     float: right;
     margin: -3% 10% 0 0;
+    color:#1d4959;
+    font-family: 'Raleway', sans-serif;
 }
 
 .col-summ-1{

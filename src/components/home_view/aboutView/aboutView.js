@@ -4,6 +4,8 @@ import {useStateData} from '../../utils/state';
 import {SectionContainer} from '../homeView';
 
 const sum_img = require("../../../assets/img/open-doodles-zombieing.png");
+const docCv = require("../../../assets/dataContent/CVSpa.docx");
+
 
 
 //INIT VIEW ABOUT
@@ -37,7 +39,7 @@ const AboutContent = () =>{
                 <div className={'title-summary-container'}>
                     {props.children}
                 </div>
-                <span className={'download-sum'}>{getDataLeg('lg.menu.about.download')}</span>
+                <a href={docCv} target={'_blank'} className={'download-sum'}>{getDataLeg('lg.menu.about.download')}</a>
             </div>
         );
     };
