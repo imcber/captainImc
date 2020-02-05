@@ -5,7 +5,7 @@
             "about":{
                 "title":"Acerca",
                 "titleView":"Soy Ekatl, Fullstack developer de Mexico viviendo en Querétaro",
-                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio UX y UI. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas.",
+                "summary":"¡Soy una persona que le gusta leer ciencia ficción! Y documentación de las tecnologías que me interesan, posts en Dev.to y Medium. Trabajo con JavaScript, React, Angular, ...rest y por ahora estudio Next.js y Graphql. Trabajo en Santander Tecnología desarrollando aplicaciones web con Java, JavaScript, Jquery y Oracle. Inicie mi carrera como desarrollador al salir de la universidad en septiembre del 2017, enseguida tuve mi primer empleo como desarrollador en una consultora de Querétaro, después me cambie a otra y desde julio del 2018 hasta hoy estoy desarrollando software como tercero en Santander. También desarrollo productos independientes con ayuda de más personas.",
                 "download":"Descarga mi CV para saber mas..."
                 },"tech":{
                 "title":"Tech",
@@ -20,7 +20,7 @@
                     "beravi":{
                         "url":"",
                         "name":"Beravi",
-                        "desc":"Pagina web la cual esta enfocada en presentar y ofrecen los servicios de contables de una empresa. Tambien se especifica el tipo de clientes esperado y la proyeccion que se tiene."
+                        "desc":"Pagina web la cual esta enfocada en presentar y ofrecen los servicios contables de una empresa. Tambien se especifica el tipo de clientes esperado y la proyeccion que se tiene."
                     },
                     "leafire":{
                         "url":"",
@@ -51,7 +51,7 @@
             "about":{
                 "title":"About",
                 "titleView":"I am Ekatl, Fullstack developer from Mexico living in Querétaro",
-                "summary":"",
+                "summary":"I'm a person who likes to read sci fi! And documentation of the technologies that interest me, posts in Dev.to and Medium. I work with JavaScript, React, Angular, ...rest and for now study Next.js and Graphql. I work at Santander developing web applications with Java, JavaScript, Jquery and Oracle. I started my career as a developer when i'm left college in September 2017, I immediately got my first job as a developer in Queretaro city in Mexico, then i change to another job and from July 2018 to today i'm' developing as a third party in Santander. I also develop my own products with other people.",
                 "download":"Download my CV to know more..."
                 },"tech":{
                 "title":"Tech",
@@ -66,17 +66,17 @@
                     "beravi":{
                         "url":"",
                         "name":"Beravi",
-                        "desc":"Pagina web la cual esta enfocada en presentar y ofrecen los servicios de contables de una empresa. Tambien se especifica el tipo de clientes esperado y la proyeccion que se tiene."
+                        "desc":"Website which is focused on presenting and offering the accounting services of a company. You also specify the expected type of customers and the projection to have."
                     },
                     "leafire":{
                         "url":"",
                         "name":"Leafire",
-                        "desc":"El objetivo de esta web es presentar el lanzamiento de diferentes productos cannabicos, en donde se muestra las especificaciones de cada uno en graficas."
+                        "desc":"The objective of this website is to present the launch of different cannabis products, where the specifications of each one in graphs are shown."
                     },
                     "cthc":{
                         "url":"",
                         "name":"CTHC",
-                        "desc":"Pagina web en donde se presenta las labores de una comunidad cannabica, al mismo tiempo se hace la invitacion a unirse a la comunidad."
+                        "desc":"Website where the work of a cannabis community is presented, at the same time the invitation to join the community is made."
                     },
                     "otro":{
                         "url":"",
