@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "586b2e896415ff95b09f25aa567f3c82",
+    "revision": "6fe017ee92a8ba6b19ca43821bdf6f5f",
     "url": "/index.html"
   },
   {
-    "revision": "dcbbaf557946acce19bd",
-    "url": "/static/css/main.48a7e954.chunk.css"
+    "revision": "19ecdf95850fc6744b36",
+    "url": "/static/css/main.925f884c.chunk.css"
   },
   {
     "revision": "d47ba3d6e678577f4a0c",
     "url": "/static/js/2.47d4e902.chunk.js"
   },
   {
-    "revision": "dcbbaf557946acce19bd",
-    "url": "/static/js/main.44c9e78f.chunk.js"
+    "revision": "19ecdf95850fc6744b36",
+    "url": "/static/js/main.5dcc8eb3.chunk.js"
   },
   {
     "revision": "33fc4b9df78069072b0d",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "eb7c701b6dc175fef677e1fc5092d6ad",
     "url": "/static/media/Beravi.eb7c701b.jpg"
+  },
+  {
+    "revision": "57a0bc6c50c4001cba7ccd0ee298ee99",
+    "url": "/static/media/CVSpa.57a0bc6c.docx"
   },
   {
     "revision": "cf905b03ba60687e17a473b96288372a",
