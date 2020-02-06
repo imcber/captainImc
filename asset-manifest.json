@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.925f884c.chunk.css",
-    "main.js": "/static/js/main.5dcc8eb3.chunk.js",
-    "main.js.map": "/static/js/main.5dcc8eb3.chunk.js.map",
+    "main.js": "/static/js/main.d1d3a488.chunk.js",
+    "main.js.map": "/static/js/main.d1d3a488.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c7717b12.js",
     "runtime-main.js.map": "/static/js/runtime-main.c7717b12.js.map",
     "static/js/2.47d4e902.chunk.js": "/static/js/2.47d4e902.chunk.js",
     "static/js/2.47d4e902.chunk.js.map": "/static/js/2.47d4e902.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c165217504d248d056def34bc09df8bd.js": "/precache-manifest.c165217504d248d056def34bc09df8bd.js",
+    "precache-manifest.aa2dc56e74e5e8c359d04d726058ff9a.js": "/precache-manifest.aa2dc56e74e5e8c359d04d726058ff9a.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.925f884c.chunk.css.map": "/static/css/main.925f884c.chunk.css.map",
     "static/media/Beravi.jpg": "/static/media/Beravi.eb7c701b.jpg",
@@ -30,6 +30,6 @@
     "static/js/runtime-main.c7717b12.js",
     "static/js/2.47d4e902.chunk.js",
     "static/css/main.925f884c.chunk.css",
-    "static/js/main.5dcc8eb3.chunk.js"
+    "static/js/main.d1d3a488.chunk.js"
   ]
 }
