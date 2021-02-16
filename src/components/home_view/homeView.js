@@ -1,64 +1,63 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import IntroView from './introView/introView';
 import AboutView from './aboutView/aboutView';
 import TechView from './techView/techView';
 import WorkView from './workView/workView';
 import ContactView from './contactView/contactView';
-import './homeView.css';
-import dl from '../../assets/dataContent/dataLanguages.json'
-import {StateProvider} from '../utils/state';
-import {FaLongArrowAltUp} from 'react-icons/fa';
-import { IconContext } from "react-icons";
-import { useScroll } from "../utils/useScroll";
-import {useStateData} from '../utils/state';
+//import './homeView.css';
+import dl from '../../assets/dataContent/dataLanguages.json';
+import { StateProvider } from '../utils/state';
+import { FaLongArrowAltUp } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
+import { useScroll } from '../utils/useScroll';
+import { useStateData } from '../utils/state';
 
-var initialState = { 
-    lg : dl['es'],/*LENGUAGE*/
-    lgKeys : Object.keys(dl),
-    lgActual : 'es'
-}
+var initialState = {
+    lg: dl['es'] /*LENGUAGE*/,
+    lgKeys: Object.keys(dl),
+    lgActual: 'es',
+};
 
 //THIS SAVE THE STATE
-const reducer = (state,action) => {
-    switch (action.type){
+const reducer = (state, action) => {
+    switch (action.type) {
         case 'changeLanguage':
-            return{
+            return {
                 ...state,
                 lg: dl[action.newLanguage],
-                lgActual: action.newLanguage
+                lgActual: action.newLanguage,
             };
         default:
             return state;
     }
 };
 
-function HomeView(props){
+function HomeView(props) {
     //SHOW THE LOADER PAGE
-    const [loading,setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
-    const offLoader = () =>{
+    const offLoader = () => {
         setLoading(true);
-    }
+    };
     initialState.offsetTopAbout = 0;
     initialState.offLoader = offLoader;
-    useEffect(()=>{
+    useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        },1000);
-      return(() =>{
-      });  
-    },[loading]);
+        }, 1000);
+        return () => {};
+    }, [loading]);
 
-    const LoaderSection = () =>{
-        return(
+    const LoaderSection = () => {
+        return (
             <div className={'loader-page'}>
                 <span>LOADING!</span>
             </div>
         );
-    }
+    };
 
-    const ContainerPage = () =>{
-        return(
+    const ContainerPage = () => {
+        return (
             <>
                 <TopButton />
                 <IntroView />
@@ -70,64 +69,67 @@ function HomeView(props){
         );
     };
 
-    return(
+    return (
         <>
             <StateProvider initialState={initialState} reducer={reducer}>
-                {loading?<LoaderSection/>:<ContainerPage/>}
+                {loading ? <LoaderSection /> : <ContainerPage />}
             </StateProvider>
         </>
     );
 }
 
-
-const TopButton = () =>{
+const TopButton = () => {
     const getDataLeg = useStateData();
-    const [visibleBackTop,setVisibleBackTop] = useState(false);
-    const offBtnBackTop = () =>{
+    const [visibleBackTop, setVisibleBackTop] = useState(false);
+    const offBtnBackTop = () => {
         const offSetAbout = getDataLeg('').offsetTopAbout;
-        const offComp = offSetAbout * .2;
-        if(scrollY < offSetAbout - offComp){
+        const offComp = offSetAbout * 0.2;
+        if (scrollY < offSetAbout - offComp) {
             setVisibleBackTop(false);
-        }else{
+        } else {
             setVisibleBackTop(true);
         }
-    }
+    };
     //HOOK OF SCROLL
     const { scrollY } = useScroll(/*offBtnBackTop*/);
-    
+
     useEffect(() => {
         offBtnBackTop();
     });
 
     //HANDLER CLICK TOP BUTTON
-    const handlerClick = event =>{
-       document.querySelector('.header-intro').scrollIntoView({behavior: 'smooth',block:'start'});
-    }
+    const handlerClick = (event) => {
+        document
+            .querySelector('.header-intro')
+            .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
-    const Buttontop = () =>{
-        return(
+    const Buttontop = () => {
+        return (
             <div className={'nav-bar-fixed'}>
-                <div className={'back-top-container'} >
-                    <IconContext.Provider value={{color:'#3AAFA9',size:'3em',className:'back-top-icon'}}>
-                        <FaLongArrowAltUp onClick={handlerClick}/>
+                <div className={'back-top-container'}>
+                    <IconContext.Provider
+                        value={{ color: '#3AAFA9', size: '3em', className: 'back-top-icon' }}
+                    >
+                        <FaLongArrowAltUp onClick={handlerClick} />
                     </IconContext.Provider>
                 </div>
-            </div> 
+            </div>
         );
-    }
-    return(
-        <>
-            {visibleBackTop?<Buttontop/>:<></>}
-        </>
-    );
+    };
+    return <>{visibleBackTop ? <Buttontop /> : <></>}</>;
 };
 
-export const SectionContainer = props =>{
-    const classHeader = 'title-container-body ' + (props.classHeader?props.classHeader:'');
-    const backgroundColor = props.backgroundColor?'#'+props.backgroundColor:'#17252A';
-    const classBody = 'rest-container-body ' + (props.classBody?props.classBody:'');
-    return(
-        <section id={props.id} className={'section-container'} style={{background:backgroundColor}}>
+export const SectionContainer = (props) => {
+    const classHeader = 'title-container-body ' + (props.classHeader ? props.classHeader : '');
+    const backgroundColor = props.backgroundColor ? '#' + props.backgroundColor : '#17252A';
+    const classBody = 'rest-container-body ' + (props.classBody ? props.classBody : '');
+    return (
+        <section
+            id={props.id}
+            className={'section-container'}
+            style={{ background: backgroundColor }}
+        >
             <div className={classHeader}>
                 <span>{props.title}</span>
             </div>
