@@ -44,7 +44,7 @@ function HomeView(props) {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 2000);
         return () => {};
     }, [loading]);
 
@@ -79,10 +79,11 @@ function HomeView(props) {
 }
 
 const TopButton = () => {
-    const getDataLeg = useStateData();
+    const getState = useStateData();
     const [visibleBackTop, setVisibleBackTop] = useState(false);
     const offBtnBackTop = () => {
-        const offSetAbout = getDataLeg('').offsetTopAbout;
+        const state = getState();
+        const offSetAbout = state.offsetTopAbout;
         const offComp = offSetAbout * 0.2;
         if (scrollY < offSetAbout - offComp) {
             setVisibleBackTop(false);
@@ -91,7 +92,7 @@ const TopButton = () => {
         }
     };
     //HOOK OF SCROLL
-    const { scrollY } = useScroll(/*offBtnBackTop*/);
+    const { scrollY } = useScroll();
 
     useEffect(() => {
         offBtnBackTop();
@@ -108,9 +109,7 @@ const TopButton = () => {
         return (
             <div className={'nav-bar-fixed'}>
                 <div className={'back-top-container'}>
-                    <IconContext.Provider
-                        value={{ color: '#3AAFA9', size: '3em', className: 'back-top-icon' }}
-                    >
+                    <IconContext.Provider value={{ size: '3em', className: 'back-top-icon' }}>
                         <FaLongArrowAltUp onClick={handlerClick} />
                     </IconContext.Provider>
                 </div>

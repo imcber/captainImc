@@ -28,7 +28,7 @@ export const CircleChart = (props) => {
             }, 200);
         }
         return () => {
-            if (thisChart) thisChart.current.style.animation = '';
+            //if (thisChart) thisChart.current.style.animation = '';
         };
     });
     return (

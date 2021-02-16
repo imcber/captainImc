@@ -1,47 +1,47 @@
-.section-container{
+.section-container {
     height: 100vh;
     width: 100%;
 }
-.title-container-body{
+.title-container-body {
     padding-left: 4vw;
     padding-top: 3%;
     height: 10%;
 }
 
-.rest-container-body{
+.rest-container-body {
     height: 87%;
 }
 
-.loader-page{
+.loader-page {
     height: 100vh;
     background: #000000;
     color: #ffffff;
 }
 
-.container-hide{
+.container-hide {
     overflow: hidden;
     display: none;
 }
 
-.nav-bar-fixed{
+.nav-bar-fixed {
     position: fixed;
     z-index: 5;
     right: 0;
 }
 
-.back-top-container{
+.back-top-container {
     height: auto;
     width: auto;
-    
 }
 
-.back-top-icon{
+.back-top-icon {
     float: right;
     margin: 4em 2em 0 0;
     cursor: pointer;
     transition: all 200ms linear;
+    color: #3aafa9;
 }
 
-.back-top-icon:hover{
-    color: #FDB813 !important;
+.back-top-icon:hover {
+    color: #fdb813 !important;
 }

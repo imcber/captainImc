@@ -1,13 +1,12 @@
-
-.intro-view{
+.intro-view {
     height: 70%;
     width: 100%;
     display: flex;
 }
 
-.menu-item{
+.menu-item {
     font-size: 8vw;
-    color: #17252A;
+    color: #17252a;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     transition: all 0.7s linear;
@@ -15,12 +14,12 @@
     text-decoration: none;
 }
 
-.menu-item:hover{
-    color: #DEF2F1;
-    padding-left: .7em;
+.menu-item:hover {
+    color: #def2f1;
+    padding-left: 0.7em;
 }
 
-.menu-container{
+.menu-container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -28,73 +27,68 @@
     top: 4%;
 }
 
-.menu-container > div{
+.menu-container > div {
     padding-left: 35%;
     height: 25%;
     width: 65%;
 }
 
-.menu-container > div:first-child{
+.menu-container > div:first-child {
     padding-top: 0 !important;
 }
 
-.back-color{
-    background: #3AAFA9;
+.back-color {
+    background: #3aafa9;
 }
 
-.main-img-container{
+.main-img-container {
     height: 100%;
     width: 40%;
     display: grid;
     align-content: center;
 }
 
-.main-img-container>img{
+.main-img-container > img {
     /*height: 110%;*/
     width: 100%;
 }
 
-.complement-intro{
+.complement-intro {
     height: 15%;
     width: 100%;
     display: flex;
-    color: #17252A;
+    color: #17252a;
 }
 
-.header-intro{
-    width: 50%;
-    height: 100%;
-}
-
-.header-intro-lg{
-    width: 50%;
-    height: 100%;
+.header-intro {
+    width: '100%';
+    height: 2rem;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    /*font-size: 1.3vw;*/
-    font-size: 100%;
-    color: #17252A;
+    color: #17252a;
+    display: flex;
+    justify-content: space-between;
 }
-.container-intro-lg{
-    padding-top: calc(100vh*.03);
+.container-intro-lg {
+    padding-top: calc(100vh * 0.03);
 }
-.container-intro-lg > span{
+.container-intro-lg > span {
     padding-right: 2vw;
     cursor: pointer;
 }
 
-.title-intro{
+.title-intro {
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
 }
 
-.title-container{
+.title-container {
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 3vh;
 }
 
-.footer-container{
+.footer-container {
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 0 !important;
@@ -102,9 +96,9 @@
     top: 50%;
 }
 
-.footer-intro{
+.footer-intro {
     width: 50%;
     height: 100%;
     position: relative;
-    color: #17252A;
+    color: #17252a;
 }
