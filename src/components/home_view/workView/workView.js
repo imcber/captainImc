@@ -149,7 +149,7 @@ const ListSitesSection = (props) => {
             thisRefListSite.current.style.opacity = '1';
         }, 250);
         return () => {
-            thisRefListSite.current.style.animation = '';
+            //thisRefListSite.current.style.animation = '';
         };
     }, [numList]);
 

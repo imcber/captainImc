@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { useStateData } from '../../utils/state';
 import { SectionContainer } from '../homeView';
 
-const sum_img = '/images/open-doodles-zombieing.png'
+const sum_img = '/images/open-doodles-zombieing.png';
 //const docCv = require('../../../../public/CVSpa.docx');
 
 //INIT VIEW ABOUT
@@ -12,7 +12,7 @@ const AboutView = () => {
     const getDataLeg = useStateData();
 
     const divAbout = useRef(null);
-
+    console.log('divAbout.current.', divAbout.current);
     useEffect(() => {
         getDataLeg('').offsetTopAbout = divAbout.current.offsetTop;
     }, []);
