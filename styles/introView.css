@@ -54,9 +54,6 @@
 }
 
 .complement-intro {
-    height: 15%;
-    width: 100%;
-    display: flex;
     color: #17252a;
 }
 
@@ -86,19 +83,4 @@
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: 3vh;
-}
-
-.footer-container {
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 0 !important;
-    position: absolute;
-    top: 50%;
-}
-
-.footer-intro {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    color: #17252a;
 }

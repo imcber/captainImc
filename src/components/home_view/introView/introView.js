@@ -9,47 +9,47 @@ const mainImg = '/images/flame-camera-access.png';
 //INIT VIEW ABOUT
 const IntroView = () => {
     //object context
-    const [dataText, handlerlanguage] = useStateValue();
-    //item to switch language
-    const LanguageItem = (props) => {
-        const active = dataText.lgActual !== props.nameLang;
-        const offLoader = dataText.offLoader;
-        //funtion click switch language
-        const switchLanguage = () => {
-            handlerlanguage({
+    const [state, setState] = useStateValue();
+    const offLoader = state.offLoader;
+    console.log('state.lgActual', state.lgActual);
+
+    //funtion click switch language
+    const switchLanguage = (nameLang) => {
+        if (state.lgActual !== nameLang) {
+            setState({
                 type: 'changeLanguage',
-                newLanguage: props.nameLang,
+                newLanguage: nameLang,
             });
             offLoader();
-        };
-        return (
-            <span
-                onClick={active ? switchLanguage : () => {}}
-                style={!active ? { color: '#DEF2F1' } : {}}
-                className='mr-6'
-            >
-                {props.nameLang.toUpperCase()}
-            </span>
-        );
+        }
     };
 
     return (
         <section className={'section-container back-color'}>
             <div className='header-intro mx-6 pt-2'>
                 <span className='title-intro' style={{ fontSize: '100%' }}>
-                    {dataText.lg.header.degree}
+                    {state.lg.header.degree}
                 </span>
                 <div className='mr-36'>
-                    {dataText.lgKeys.map((item) => (
-                        <LanguageItem key={item} nameLang={item} />
+                    {state.lgKeys.map((nameLang) => (
+                        <span
+                            onClick={() => switchLanguage(nameLang)}
+                            style={state.lgActual !== nameLang ? {} : { color: '#DEF2F1' }}
+                            className='mr-6 cursor-pointer'
+                        >
+                            {nameLang.toUpperCase()}
+                        </span>
                     ))}
                 </div>
             </div>
             <div className='intro-view'>
                 <MenuList />
             </div>
-            <div className={'complement-intro'}>
-                <FooterIntro />
+            <div className={'complement-intro mt-auto'}>
+                <div className={'flex justify-between'}>
+                    <span className='title-intro'>{'CAPTAINIMC.DEV'}</span>
+                    <span className='title-intro'>{'2021'}</span>
+                </div>
             </div>
         </section>
     );
@@ -59,8 +59,8 @@ const IntroView = () => {
 const FooterIntro = () => {
     const FooterIntro = (props) => {
         return (
-            <div className={'footer-intro'}>
-                <div className={'footer-container'} style={props.style}>
+            <div className={''}>
+                <div className={''} style={props.style}>
                     <span className='title-intro'>{props.text}</span>
                 </div>
             </div>
@@ -68,7 +68,7 @@ const FooterIntro = () => {
     };
     return (
         <>
-            <FooterIntro text={'CAPTAINIMC.COM'} />
+            <FooterIntro text={'CAPTAINIMC.DEV'} />
             <FooterIntro style={{ right: '0' }} text={'2021'} />
         </>
     );
