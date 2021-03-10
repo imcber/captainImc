@@ -22,9 +22,7 @@
 .menu-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 60%;
-    top: 4%;
 }
 
 .menu-container > div {

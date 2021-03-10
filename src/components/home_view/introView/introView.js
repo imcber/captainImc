@@ -11,7 +11,20 @@ const IntroView = () => {
     //object context
     const [state, setState] = useStateValue();
     const offLoader = state.offLoader;
-    console.log('state.lgActual', state.lgActual);
+
+    //list of the menu
+    const getDataText = useStateData();
+    const listMenuStr = Object.keys(getDataText('lg.menu'));
+    const listItemMenu = listMenuStr.map((item) => {
+        const { title, id } = getDataText('lg.menu.' + item);
+        return { title, section: item, id };
+    });
+
+    //Go to specific section
+    const goSection = (item) => {
+        const thisSection = '#' + item.section + 'View';
+        document.querySelector(thisSection).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
     //funtion click switch language
     const switchLanguage = (nameLang) => {
@@ -42,11 +55,22 @@ const IntroView = () => {
                     ))}
                 </div>
             </div>
-            <div className='intro-view'>
-                <MenuList />
+            <div className='intro-view mt-5'>
+                <div className={'menu-container'}>
+                    {listItemMenu.map((item) => (
+                        <div key={item.id}>
+                            <a className={'menu-item'} onClick={() => goSection(item)}>
+                                {item.title}
+                            </a>
+                        </div>
+                    ))}
+                </div>
+                {/* {<div className='main-img-container'>
+                    <img src={mainImg} alt={'intro-img'} />
+                </div>} */}
             </div>
             <div className={'complement-intro mt-auto'}>
-                <div className={'flex justify-between'}>
+                <div className={'flex justify-between mx-2'}>
                     <span className='title-intro'>{'CAPTAINIMC.DEV'}</span>
                     <span className='title-intro'>{'2021'}</span>
                 </div>
@@ -54,63 +78,5 @@ const IntroView = () => {
         </section>
     );
 };
-
-//FOOTER FROM THE INTRO
-const FooterIntro = () => {
-    const FooterIntro = (props) => {
-        return (
-            <div className={''}>
-                <div className={''} style={props.style}>
-                    <span className='title-intro'>{props.text}</span>
-                </div>
-            </div>
-        );
-    };
-    return (
-        <>
-            <FooterIntro text={'CAPTAINIMC.DEV'} />
-            <FooterIntro style={{ right: '0' }} text={'2021'} />
-        </>
-    );
-};
-
-//Contain the items of the menu
-function MenuList(props) {
-    const getDataText = useStateData();
-    let listMenuStr = ['about', 'tech', 'work', 'contact'];
-    const listItemMenu = listMenuStr.map((item) => {
-        return { title: getDataText('lg.menu.' + item).title, section: item };
-    });
-
-    const MenuItem = (props) => {
-        const goSection = () => {
-            const thisSection = '#' + props.item.section + 'View';
-            document
-                .querySelector(thisSection)
-                .scrollIntoView({ behavior: 'smooth', block: 'start' });
-        };
-
-        return (
-            <div>
-                <a className={'menu-item'} onClick={goSection}>
-                    {props.item.title}
-                </a>
-            </div>
-        );
-    };
-
-    return (
-        <>
-            <div className={'menu-container'}>
-                {listItemMenu.map((item) => (
-                    <MenuItem key={item.section} item={item} />
-                ))}
-            </div>
-            <div className='main-img-container'>
-                <img src={mainImg} alt={'intro-img'} />
-            </div>
-        </>
-    );
-}
 
 export default IntroView;
